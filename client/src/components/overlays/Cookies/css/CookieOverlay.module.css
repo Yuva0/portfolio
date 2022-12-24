@@ -1,0 +1,101 @@
+.cookiesOverlayWrapper{
+  display: none;
+  flex-direction: row;
+  padding:12px 16px; 
+  background-color: var(--overlayTheme);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 5;
+  bottom: -128px;
+  text-align: center;
+  max-width: 80%;
+  justify-content: center;
+  font-family: var(--titleFont); 
+}
+
+.showOverlay{
+display: flex;
+animation: moveCookieUp 0.3s ease-out 5s 1 forwards; 
+}
+
+@keyframes moveCookieUp {
+  0%{
+      transform: translateY(0px);
+  }
+  100%{
+      transform: translateY(-176px);
+  }
+}
+
+.acceptButton{
+  font-size:18px;
+  border-radius: 5px;
+  color:var(--mainTheme);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: transform 0.1s linear;
+}
+
+.acceptButton:hover{
+transform: translateY(-4px);
+}
+
+.rejectButton{
+  font-size:18px;
+  border-radius: 5px;
+  color:var(--accentTheme);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: transform 0.1s linear;
+}
+
+.rejectButton:hover{
+transform: translateY(-4px);
+}
+
+/* Laptop Devices */
+@media only screen and (max-width: 1500px) {
+  .cookiesOverlayWrapper{
+    max-width: var(--largeWidth);
+  }
+}
+
+/* Large Tablet Devices */
+@media only screen and (max-width: 1200px) {
+  .cookiesOverlayWrapper{
+    max-width: var(--mediumWidth);
+  }
+}
+
+/* iPad Devices */
+@media only screen and (max-width: 1000px) {
+  .cookiesOverlayWrapper{
+    max-width: var(--smallWidth);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .cookiesOverlayWrapper{
+    max-width: 85%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .cookiesOverlayWrapper{
+    max-width: 90%;
+  }
+  .cookiesOverlayWrapper{
+      padding:4px 8px; 
+  }
+}

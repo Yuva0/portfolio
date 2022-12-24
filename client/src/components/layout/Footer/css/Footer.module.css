@@ -1,0 +1,123 @@
+.footer{
+  width: 100%;
+  font-family: var(--titleFont);
+  padding-bottom:12px;
+  background-color: var(--mainTheme);
+  color:white;
+  display: flex;
+  justify-content: center;
+}
+
+.footerContent{
+  width: var(--verylargeWidth);
+  max-width: 80%;
+}
+
+.logoIcon{
+    display: flex;
+    justify-content: flex-end;
+}
+.logoIcon img{
+    height: 60px;
+}
+
+.titleHeader{
+    margin-top: 24px;
+    text-align: center;
+}
+
+.subTitleHeader{
+    text-align: center;
+}
+
+.footerMenuComplete{
+  margin-left: 210px;
+}
+
+.footerMenu{
+    display: flex;
+    flex-direction: row;
+    margin-top: 21px;
+}
+.lastFooterMenu{
+    margin-bottom: 24px;
+}
+.footerMenuHeader{
+    width:150px;
+    min-width: 150px;
+    border-right: 1px solid #dee2e6;
+    color:#dee2e6;
+}
+.footerMenuContent{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap:4px;
+    column-gap: 16px;
+    margin-left: 16px;
+}
+.footerMenuFollowLink{
+    font-size: 21px;
+}
+.footerMenuContent li a{
+  color:white;
+}
+.footerMenuContent li a:hover{
+    color:black;
+}
+
+/* Laptop Devices */
+@media only screen and (max-width: 1500px) {
+    .footerContent{
+      width: var(--largeWidth);
+    }
+    .footerMenuComplete{
+      margin-left: 100px;
+    }
+  }
+  
+  /* Large Tablet Devices */
+  @media only screen and (max-width: 1200px) {
+    .footerContent{
+      width: var(--mediumWidth);
+    }
+  }
+  
+  /* iPad Devices */
+  @media only screen and (max-width: 1000px) {
+    .footerContent{
+      width: var(--smallWidth);
+    }
+    .footerMenuComplete{
+      margin-left: 0px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .footerMenuHeader{
+        width:100px;
+        min-width: 100px;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .footerContent{
+      max-width: 85%;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .footerContent{
+      max-width: 90%;
+    }
+    .logoIcon img{
+        height: 50px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .footerMenuHeader{
+        width:80px;
+        min-width: 80px;
+    }
+  }

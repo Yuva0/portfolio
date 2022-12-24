@@ -1,0 +1,78 @@
+.skillSetWrapper{
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--titleFont);
+  margin-top: 24px;
+}
+
+.skillSetTitle{
+  margin-top: 4px;
+}
+
+.skillSetItemWrapper{
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 36px;
+  margin:18px 0 24px 0;
+}
+
+.skillList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  margin: 1em 0;
+}
+.arrow::after {
+  display: inline-block;
+  content: "\0279E";
+  -webkit-transition: transform 0.1s ease-out;
+  -moz-transition: transform 0.1s ease-out;
+  -ms-transition: transform 0.1s ease-out;
+  -o-transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+}
+.arrow:hover::after {
+  -webkit-transform: translateX(4px);
+  -moz-transform: translateX(4px);
+  -ms-transform: translateX(4px);
+  -o-transform: translateX(4px);
+  transform: translateX(4px);
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  cursor: pointer;
+  margin: 24px 0;
+}
+
+.pagination a{
+  padding:10px;
+  border: 1px solid var(--mainTheme);
+  color: var(--mainTheme);
+}
+
+.pagination__link__active a{
+  color:var(--colorTheme);
+  background: var(--mainTheme);
+  border:1px solid var(--mainTheme);
+}
+
+.pagination__link__disabled a{
+  color: var(--accentTheme);
+  border:1px solid var(--accentTheme);
+}
+
+@media only screen and (max-width: 400px) {
+  .skillSetItemWrapper{
+      row-gap: 24px;
+  }
+}

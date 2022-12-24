@@ -1,0 +1,27 @@
+.heart{
+  font-size: 32px;
+  cursor: pointer;
+  color:var(--colorTheme);
+}
+
+.notLiked:hover{
+  color:var(--accentTheme);
+}
+
+.liked{
+  color:#e63946;
+}
+
+.liked:hover{
+  color:#d90429
+}
+
+.likeCount{
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .heart{
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,228 @@
+.experienceTitle{
+  margin-top: 4px;
+}
+
+.timeline{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  max-width: 100%;
+  /* background-color: var(--background);#2B343A; */
+  position: relative;
+}
+
+.timeline-row-bottom{
+  margin-top: 72px;
+}
+
+.timeline-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 72px;
+}
+
+.timeline-row-first{
+  margin-top: 0px;
+}
+
+#educational-timeline{
+  margin-bottom: 108px;
+}
+
+.timeline-item{
+  border-radius: 10px;
+  width: 45%;
+  background-color: var(--timelineTheme); /* #333C42;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:stretch;
+}
+
+/* .timeline-item div,ul{
+  margin-left:21px;
+  margin-right:21px;
+} */
+
+.timeline-item-position{
+  margin-top:24px;
+  margin-left:21px;
+  margin-right:21px;
+}
+
+.timeline-location{
+  margin-top:8px;
+  background-color: var(--background);
+  font-size: 14px;
+  padding:4px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  margin-left:21px;
+  margin-right:21px;
+}
+
+.timeline-description{
+  margin-top:10px;
+  list-style-type: disc;
+  font-size: 15px;
+  padding-left: 8px;
+  margin-left:21px;
+  margin-right:21px;
+}
+
+.timeline-mini-description{
+  margin-top:16px !important;
+}
+
+/* .timeline-description li{
+  margin-top:8px;
+} */
+
+.timeline-description-item{
+  margin-top:8px;
+}
+
+#timeline-tenth{
+  margin-bottom: 24px;
+}
+
+.timeline-skills{
+  margin-top:16px;    
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  margin-left:21px;
+  margin-right:21px;
+}
+
+/* .timeline-skills li{
+  flex:1;
+  text-align: center;
+  background-color: var(--backgroundColorTheme);
+  padding-left:8px;
+  padding-right: 8px;
+  padding-top:1px;
+  padding-bottom: 1px;
+  margin-top:8px;
+  margin-left: 8px;
+} */
+
+.timeline-skills-item{
+  flex:1;
+  text-align: center;
+  background-color: var(--backgroundColorTheme);
+  padding-left:8px;
+  padding-right: 8px;
+  padding-top:1px;
+  padding-bottom: 1px;
+  margin-top:8px;
+  margin-left: 8px;
+}
+
+.timeline-item-visible{
+  display: flex!important;
+}
+
+.timeline-item-invisible{
+  display: none!important;
+}
+
+.timeline-circle{
+  width: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-item-circle{
+  background-color: var(--mainTheme);
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.timeline-blank{
+  width: 45%;
+  background-color: transparent;
+}
+
+.time-line{
+  position: absolute;
+  left:50%;
+  background-color: var(--mainTheme);
+  height: 100%;
+}
+
+.time-line{
+    position: absolute;
+    left:50%;
+    background-color: var(--mainTheme);
+    height: 100%;
+}
+
+@media (max-device-width:1200px){ /*Very Large Size -> when there are no changes in height but width reduces*/
+  /*Only decrease icon size since height is same*/
+  :root{
+      --skill-icon_size:120px;
+  }
+
+  .timeline{
+      max-width: 100%;
+  }
+
+  .timeline-heading{
+      width: 90%;
+      max-width: 100%;
+  }
+}
+
+/* Width: 1100px */
+@media (max-device-width:1100px){/*Large Height, Large Width -> width has grown smaller*/
+  .timeline-item-invisible{
+      display: flex!important;
+  }
+
+  .timeline-item-visible{
+      display: none!important;
+  }
+
+  .timeline{
+      align-items: flex-start;
+  }
+
+  .timeline-row{
+      justify-content: flex-start;
+      width: 100%;
+  }
+
+  .timeline-item{
+      width: 85%;
+  }
+
+  .time-line{
+      left:5%;
+  }
+}
+
+/* Width: 950px */
+@media (max-device-width:950px){/*Large Height, Mediocre Width -> width has grown smaller*/
+  .timeline-item-circle{
+      width:40px;
+      height:40px;
+  }
+}
+
+/* Width: 650px */
+@media (max-device-width:650px) and (max-device-height:1000px){/*Large Height, Very Extreme Mini Width -> Width is extremely small*/
+  .timeline-item-circle{
+      width: 30px;
+      height: 30px;;
+  }
+}

@@ -1,0 +1,14 @@
+.categoryMain{
+  position: relative;
+}
+
+.categoryLink{
+  display: flex;
+  flex-direction: row;
+  cursor:pointer;
+  align-items:center;
+}
+
+.categoryLink h4{
+  margin-right:4px;
+}

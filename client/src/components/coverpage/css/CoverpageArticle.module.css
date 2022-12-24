@@ -1,0 +1,49 @@
+.coverPageArticle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    /* padding:0 20%; */
+  }
+  
+  .title{
+    margin-bottom: 18px;
+    text-align: center;
+    font-family: var(--titleFont);
+  }
+  
+  .description{
+    /* with Know More button -> */
+    /* margin-bottom: 32px; */
+
+    /* Without Know More */
+    margin-bottom: 16px;
+  }
+  
+  .button{
+    width:100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right:8px;
+  }
+  
+  /* @media only screen and (max-width: 1000px) {
+    .coverPageArticle {
+      padding: 0 15%;
+    }
+  
+    .coverPageArticle h1{
+      font-size: 32px;
+    }
+  
+    .coverPageArticle h2{
+      font-size: 18px;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .coverPageArticle {
+      padding: 0 4%;
+    }
+  } */

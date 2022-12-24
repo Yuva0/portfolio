@@ -1,0 +1,56 @@
+/* Monitor Devices */
+
+.articlepage{
+  height: auto;
+  display: flex;
+  /* justify-content: center; */
+  min-height: 100vh;
+  max-width: 80%;
+  /* align-items: center; */
+  flex-direction: column;
+  padding: 80px 0 80px 0;
+  width: var(--largeWidth);
+}
+
+.interactionEvents{
+  margin-top:32px;
+}
+
+.interactionEventsTitle{
+  font-family: var(--titleFont);
+  color:var(--accentTheme);
+}
+
+.interactionEventsContent{
+  margin-top:8px;
+}
+
+.likeButton{
+  display: inline-block;
+}
+
+/* Laptop Devices */
+@media only screen and (max-width: 1500px) {
+  .articlepage{
+    width: var(--mediumWidth);
+  }
+}
+
+/* iPad Devices */
+@media only screen and (max-width: 1000px) {
+  .articlepage{
+    width: var(--smallWidth);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .articlepage{
+    max-width: 85%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .articlepage{
+    max-width: 90%;
+  }
+}

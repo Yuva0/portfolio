@@ -1,0 +1,23 @@
+.mottoContentWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    word-spacing: 2px;
+    font-family: var(--titleFont);
+}
+
+.mottoContentTitle{
+    margin-top: 8px;
+}
+
+.mottoContentBody{
+    margin-top: 12px;
+    text-align: center;
+}
+
+.mottoContentAuthor{
+    margin:6px 0 16px 0;
+}

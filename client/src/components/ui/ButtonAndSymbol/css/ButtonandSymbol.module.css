@@ -1,0 +1,28 @@
+.button{
+    padding:10px;
+    border-radius: 5px;
+    color:white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s;
+  }
+  
+  .button:hover{
+    transform: scale(1.05);
+  }
+  
+  .button a{
+    color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .text{
+    margin-right:18px;
+  }
+  
+  .faicon{
+    font-size:18px;
+  }

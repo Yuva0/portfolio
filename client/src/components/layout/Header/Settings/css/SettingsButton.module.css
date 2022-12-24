@@ -1,0 +1,31 @@
+.button{
+  padding:7px;
+  font-size:21px;
+  border-radius: 5px;
+  color:#FFBE52;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.button::after{
+  content: "";
+  position:absolute;
+  top:90%;
+  border-width:8px;
+  border-style: solid;
+  border-color: #FFBE52 transparent transparent transparent;
+}
+
+.hideSettings::after{
+  content: none;
+}
+
+.settingsMain{
+  position: relative;
+  white-space: nowrap;
+}

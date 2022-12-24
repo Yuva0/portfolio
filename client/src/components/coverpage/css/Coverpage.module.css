@@ -1,0 +1,30 @@
+.coverpage{
+    width: 100%;
+    height:auto;
+    margin:0px 0 24px 0;
+}
+
+.imageIcon{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height:80px;
+    margin-bottom: 8px;
+}
+
+.imageIcon img{
+    height: 100%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 1000px) {
+    .imageIcon {
+        height:70px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .imageIcon {
+        height:60px;
+    }
+}

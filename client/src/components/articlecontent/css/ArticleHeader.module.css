@@ -1,0 +1,93 @@
+.articleHeader{
+  padding:24px 0 18px 0;
+}
+
+.navigation{
+  font-family: var(--titleFont);
+  margin-bottom: 4px;
+}
+
+.navigation a{
+  color:var(--mainTheme);
+}
+
+.title{
+  margin-bottom:4px;
+  font-family: var(--titleFont);
+}
+
+
+.imageWithCaption{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.image{
+  /* padding:0 5%; */
+  border-radius: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.headerContent{
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.authorWrapper{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.authors span{
+  white-space: nowrap;
+}
+
+.image img{
+  width: 100%;
+  object-fit: contain;
+  border-radius: 2%;
+}
+
+.imageToHalf img{
+  width: 75%;
+}
+
+.videoWrapper{
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.iframeVideo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.imageCaption a{
+  color:var(--mainTheme);
+}
+
+.imageCaption a:hover{
+  text-decoration: underline;
+}
+
+.imageCaption p{
+  font-size: 14px;
+}
+
+@media (max-width: 600px){
+  .imageToHalf img{
+    width: 100%;
+  }
+}

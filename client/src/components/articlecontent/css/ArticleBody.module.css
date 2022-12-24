@@ -1,0 +1,37 @@
+.articleBody{
+  width:100%;
+  word-spacing:3px;
+}
+
+.articleBody p,.articleBody h1,.articleBody h2,.articleBody h3,.articleBody h4,.articleBody h5,.articleBody h6{
+  margin:4px 0;
+}
+
+.articleBody li{
+  list-style-type:disc;
+  font-size: 18px;
+}
+
+.articleBody img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.articleBody img + em{
+  display: block;
+  text-align: center;
+  font-size:16px;
+  font-style: normal;
+  word-spacing:normal;
+}
+
+.articleBody a{
+  color:var(--mainTheme);
+}
+
+.articleBody a:hover{
+ text-decoration: underline;
+}

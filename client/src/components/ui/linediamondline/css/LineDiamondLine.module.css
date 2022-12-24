@@ -1,0 +1,24 @@
+.lineDiamondLineWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color:var(--mainTheme);
+    margin-top: 8px;
+}
+
+.line{
+    width: 100%;
+    height:1px;
+    background-color: var(--mainTheme);
+}
+
+.design{
+    margin:0 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.icon{
+    margin:0 5px;
+}
