@@ -14,12 +14,12 @@ const LikeButton = (props) => {
     const likedArticleHandler = async(type) => {
         setLikedArticle(() => (type));
         if(type === true){
-            // const axiosInstance = axios.create({
-            //     baseURL:process.env.REACT_APP_API_URL
-            // });
             const axiosInstance = axios.create({
-                baseURL:"http://localhost:5000/api/"
-            })
+                baseURL:process.env.REACT_APP_API_URL
+            });
+            // const axiosInstance = axios.create({
+            //     baseURL:"http://localhost:5000/api/"
+            // })
             axiosInstance.post(props.contentType+"/"+props._id+"/like",{type:"like"});
             setLikesCount((likesCount) => (likesCount+1));
         }
