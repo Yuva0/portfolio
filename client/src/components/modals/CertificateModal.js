@@ -1,8 +1,8 @@
 import { Fragment,useEffect,useState } from 'react';
 import ReactDOM from 'react-dom';
 import getAxiosRequest from '../../util/getAxiosRequest';
-import CertificateHeader from '../projectcontent/ProjectHeader';
-import CertificateBody from '../projectcontent/ProjectBody';
+import CertificateHeader from '../certificatecontent/CertificateHeader';
+import CertificateBody from '../certificatecontent/CertificateBody';
 import LikeButton from '../ui/likebutton/LikeButton';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
