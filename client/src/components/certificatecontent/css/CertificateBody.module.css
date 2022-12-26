@@ -1,6 +1,7 @@
 .skillBody{
   width:100%;
   word-spacing:3px;
+  word-break: break-word;
 }
 
 .skillBody p,.skillBody h1,.skillBody h2,.skillBody h3,.skillBody h4,.skillBody h5,.skillBody h6{
