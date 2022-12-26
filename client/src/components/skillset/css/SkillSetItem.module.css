@@ -30,6 +30,7 @@
 .starRating{
   margin-bottom:8px;
   text-align: center;
+  font-size:12px;
 }
 
 @media only screen and (max-width: 800px) {
