@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import fetchDate from '../../util/fetchDate';
 import firstLetterUpper from '../../util/firstLetterUpper';
 import classes from './css/BlogSetItem.module.css';
@@ -49,8 +49,8 @@ const BlogSetItem = (props) => {
   }
 
   return (
-    <div className={classes.blogSetItemWrapper}>
-      <Link to={{ pathname: `/blog/${props.idTitle}`, query: { title: props.title } }}>
+    <Fragment>
+      <Link className={classes.blogSetItemWrapper} to={{ pathname: `/blog/${props.idTitle}`, query: { title: props.title } }}>
       {coverImage}
       <div className={classes.content}>
         <div className={classes.title}><h3>{props.title}</h3></div>
@@ -60,7 +60,7 @@ const BlogSetItem = (props) => {
         <div className={classes.date}><h6>{day} {month} {year}</h6></div>
       </div>
       </Link>
-    </div>
+    </Fragment>
     );
 //   return (
 //     <Fragment>
