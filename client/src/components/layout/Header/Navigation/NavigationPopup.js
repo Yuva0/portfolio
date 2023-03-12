@@ -36,7 +36,7 @@ const NavigationPopup = (props, ref) => {
           <li className={classes.popupItemCategory}><NavLink className={({ isActive }) => (isActive ? `${classes.activeMenuItem}` : '')} exact="true" to="/skills" onClick={hideNavigation}><h4>Skills</h4></NavLink></li>
         </ul>
       </li>
-      {/* <li className={classes.popupItem}><NavLink className={({ isActive }) => (isActive ? `${classes.activeMenuItem}` : '')} exact="true" to="/stories"><h4>Stories</h4></NavLink></li> */}
+      <li className={classes.popupItem}><NavLink className={({ isActive }) => (isActive ? `${classes.activeMenuItem}` : '')} exact="true" to="/blogs"><h4>Blogs</h4></NavLink></li>
     </ul>
   );
 };
