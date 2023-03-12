@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
-import classes from './css/CertificateHeader.module.css';
+import classes from './css/BlogHeader.module.css';
 import fetchDate from '../../util/fetchDate';
 
-const CertificateHeader = (props) => {
+const BlogHeader = (props) => {
 
   let categories;
   if(props.category){
@@ -16,6 +16,10 @@ const CertificateHeader = (props) => {
     });
   }
 
+  let authors=null;
+  if(props.authors){
+    authors = <span className={classes.authorWrapper}>{props.authors.map((author,index) => { return <div key={index}>{author}</div> })}</span>
+  }
 
   let difficulty;
   if (props.difficultyType === 3){
@@ -36,16 +40,18 @@ const CertificateHeader = (props) => {
 
   let videoOrImage;
   if(props.videoUrl && props.videoUrl!== undefined){ //Video
-    videoOrImage = <div className={classes.videoWrapper}><iframe src={props.videoUrl} className={classes.iframeVideo} allowFullScreen></iframe></div>
+    videoOrImage = <div className={classes.videoWrapper}><iframe title={props.videoUrl} src={props.videoUrl} className={classes.iframeVideo} allowFullScreen></iframe></div>
   }
   else{ //Image
     videoOrImage = <div className={classes.imageWithCaption}><div className={`${classes.image}`}><img src={props.coverImage} alt={props.imageAlt}/></div><div className={classes.imageCaption}><ReactMarkdown>{props.imageCaption}</ReactMarkdown></div></div>
   }
+
   return (
     <div className={classes.skillHeader}>
       <div className={classes.navigation}><h5>{categories}</h5></div>
       <div className={classes.name}><h1>{props.title}</h1></div>
       <div className={classes.headerContent}>
+        {authors}
         {difficulty}
         {date}
       </div>
@@ -54,4 +60,4 @@ const CertificateHeader = (props) => {
   );
 };
 
-export default CertificateHeader;
+export default BlogHeader;

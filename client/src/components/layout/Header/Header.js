@@ -35,7 +35,7 @@ const Header = (props) => {
         <ul className={classes.rightItems}>
           <li><NavLink className={({ isActive }) => (isActive ? `${classes.activeMenuItem}` : `${classes.menuItems}`)} exact="true" to="/"><h4>Home</h4></NavLink></li>
           <li className={classes.menuItems}><CategoryButton/></li>
-          {/* <li><NavLink className={({ isActive }) => (isActive ? `${classes.activeMenuItem}` : `${classes.menuItems}`)} exact="true" to="/stories"><h4>Stories</h4></NavLink></li> */}
+          <li><NavLink className={({ isActive }) => (isActive ? `${classes.activeMenuItem}` : `${classes.menuItems}`)} exact="true" to="/blogs"><h4>Blog</h4></NavLink></li>
           <li className={classes.navigationButton}><NavigationButton/></li>
           <li><SettingsButton/></li>
         </ul>

@@ -10,6 +10,7 @@ const projectRoute = require("./routes/projects");
 const certificateRoute = require("./routes/certificates");
 const skillsRoute = require("./routes/skills");
 const hobbyRoute = require("./routes/hobbies");
+const blogRoute = require("./routes/blogs");
 
 dotenv.config();
 app.use(express.json());
@@ -27,6 +28,7 @@ app.use("/api/projects",projectRoute);
 app.use("/api/certificates",certificateRoute);
 app.use("/api/skills", skillsRoute);
 app.use("/api/hobbies", hobbyRoute);
+app.use("/api/blogs", blogRoute);
 
 app.listen("5000",() => {
     console.log("Backend is running.");
