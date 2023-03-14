@@ -9,6 +9,7 @@ import Experience from '../../experience/Experience';
 import Education from '../../education/Education';
 import HobbySet from '../../hobbyset/HobbySet';
 import LineDiamondLine from '../../ui/linediamondline/LineDiamondLine';
+import Intropage from '../../intropage/Intropage';
 
 const Homepage = () => {
 
@@ -20,7 +21,8 @@ const Homepage = () => {
 
     return (
         <div className={classes.homepage}>
-            <CoverPage />
+            {/* <CoverPage /> */}
+            <Intropage/>
             {/* <Motto/> */}
             <ProjectSet title="Latest Projects" time="latest" limit="3"/>
             {certificateset}
