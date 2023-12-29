@@ -8,6 +8,7 @@ const Experience = () => {
   return (
     <Fragment>
     <div className={`${classes.experienceTitle} title`}><h3>Experience</h3></div>
+    
     <div className={classes.timeline}>
          <div className={`${classes["timeline-row"]} ${classes["timeline-row-right"]} ${classes["timeline-row-first"]}`}>
             <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
