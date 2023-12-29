@@ -9,19 +9,41 @@ const Experience = () => {
     <Fragment>
     <div className={`${classes.experienceTitle} title`}><h3>Experience</h3></div>
     <div className={classes.timeline}>
-        <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]} ${classes["timeline-row-first"]}`}>
-            <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><div className={classes["timeline-item-circle"]}></div></div>
+         <div className={`${classes["timeline-row"]} ${classes["timeline-row-right"]} ${classes["timeline-row-first"]}`}>
+            <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
+            <div className={classes["timeline-circle"]}><div className={classes["timeline-item-circle"]}></div></div>
             <div className={classes["timeline-item"]}>
-                <div className={classes["timeline-item-position"]}>Associate Software Developer</div>
+                <div className={classes["timeline-item-position"]}>Sr. Software Developer</div>
                 <div className={classes["timeline-location"]}>
-                    <span>&nbsp;<FontAwesomeIcon icon={faLocationPin}/>&nbsp;&nbsp;SAP Labs, India</span>
-                    <span><FontAwesomeIcon icon={faCalendar}/>&nbsp;&nbsp;Jan 2020 - Present&nbsp;&nbsp;</span>
+                    <span>&nbsp;<FontAwesomeIcon icon={faLocationPin}/>&nbsp;&nbsp;Whatfix</span>
+                    <span><FontAwesomeIcon icon={faCalendar}/>&nbsp;&nbsp;Oct 2023 - Present&nbsp;&nbsp;</span>
                 </div>
                 <ul className={classes["timeline-description"]}>
-                    <li className={classes["timeline-description-item"]}>Started working as an intern and then got selected for full time role</li> 
-                    <li className={classes["timeline-description-item"]}>My main focus is in creating web applications
-                    using OpenUI5 and S/4 HANA</li>
-                    <li className={classes["timeline-description-item"]}>Also responsible for testing of APIs using JMeter and Postman</li>
+                    <li className={classes["timeline-description-item"]}>Developing a comprehensive component design system for our products.</li>
+                    <li className={classes["timeline-description-item"]}>Ensuring accessibility and optimizing performance of all designed components.</li>
+                    <li className={classes["timeline-description-item"]}>Currently managing a library of 60+ components, all built entirely from scratch.</li> 
+                </ul>
+                <ul className={classes["timeline-skills"]}>
+                    <li className={classes["timeline-skills-item"]}>Design System</li>
+                    <li className={classes["timeline-skills-item"]}>React</li>
+                    <li className={classes["timeline-skills-item"]}>Jest</li>
+                    <li className={classes["timeline-skills-item"]}>Javascript</li>
+                </ul>
+            </div>
+        </div>
+        <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]}`}>
+            <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><div className={classes["timeline-item-circle"]}></div></div>
+            <div className={classes["timeline-item"]}>
+                <div className={classes["timeline-item-position"]}>Software Developer</div>
+                <div className={classes["timeline-location"]}>
+                    <span>&nbsp;<FontAwesomeIcon icon={faLocationPin}/>&nbsp;&nbsp;SAP Labs, India</span>
+                    <span><FontAwesomeIcon icon={faCalendar}/>&nbsp;&nbsp;Jan 2020 - Oct 2023&nbsp;&nbsp;</span>
+                </div>
+                <ul className={classes["timeline-description"]}>
+                    <li className={classes["timeline-description-item"]}>Managed the complete flow (Back-End. Front-End and APIs) of 8 websites</li> 
+                    <li className={classes["timeline-description-item"]}>Worked with experienced testers to find performance bottlenecks thus improving page loading time by 19%</li>
+                    <li className={classes["timeline-description-item"]}>Constructed test cases to minimize unused code and remove dead code </li>
+                    <li className={classes["timeline-description-item"]}>Won Rising Star Award in 2021</li>
                 </ul>
                 <ul className={classes["timeline-skills"]}>
                     <li className={classes["timeline-skills-item"]}>OpenUI5</li>
