@@ -1,47 +1,102 @@
-import { useState } from 'react';
-import {Link, NavLink} from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleUp, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import classes from './css/Header.module.css';
-import logo from '../../../assets/images/logo.png';
-import name from '../../../assets/images/name.png';
-import SettingsButton from './Settings/SettingsButton';
-import NavigationButton from './Navigation/NavigationButton';
-import CategoryButton from './Category/CategoryButton';
-
+import { useRef, useState } from "react";
+import {
+  Header as HeaderUI,
+  HeaderItem,
+  Text,
+  useTheme,
+  HeaderGroup,
+  Link,
+  IconButton,
+  Menu,
+  MenuItem,
+} from "stelios";
+import { Link as ReactRouterLink, NavLink } from "react-router-dom";
+import { IconCaretDown, IconDownload, IconSettings } from "@tabler/icons-react";
+import classes from "./css/Header.module.css";
+import logo from "../../../assets/images/logo.png";
+import name from "../../../assets/images/name.png";
+import SettingsButton from "./Settings/SettingsButton";
+import NavigationButton from "./Navigation/NavigationButton";
+import CategoryButton from "./Category/CategoryButton";
 
 const Header = (props) => {
-  const [hideShowIcon, setHideShowIcon] = useState(faAngleUp);
-  const [hideHeader, setHideHeader] = useState(false)
-
-
-  function hideShowHeader(){
-    if(hideShowIcon === faAngleUp){
-      setHideShowIcon(faAngleDown);
-    }
-    else{
-      setHideShowIcon(faAngleUp);
-    }
-    setHideHeader((toggleHeader) => !toggleHeader);
-  };
+  const colorPalette = useTheme().theme.colorPalette;
+  const _background =
+    colorPalette.primary.appearance === "dark" ? "#202124" : "white";
+  const categoryRef = useRef(null);
+  const [open, setOpen] = useState(false);
 
   return (
-    <div id="header" className={`${classes.header} ${hideHeader && classes.hideHeader}`}>
-      <div className={classes.headerItems}>
-        <ul className={classes.leftItems}>
-          <li className={classes.itemImage}><Link to="/"><img src={logo} alt="logo" /></Link></li>
-          <li className={`${classes.itemImage} ${classes.itemName}`}><Link to="/"><img src={name} alt="name" /></Link></li>
-        </ul>
-        <ul className={classes.rightItems}>
-          <li><NavLink className={({ isActive }) => (isActive ? `${classes.activeMenuItem}` : `${classes.menuItems}`)} exact="true" to="/"><h4>Home</h4></NavLink></li>
-          <li className={classes.menuItems}><CategoryButton/></li>
-          <li><NavLink className={({ isActive }) => (isActive ? `${classes.activeMenuItem}` : `${classes.menuItems}`)} exact="true" to="/blogs"><h4>Blog</h4></NavLink></li>
-          <li className={classes.navigationButton}><NavigationButton/></li>
-          <li><SettingsButton/></li>
-        </ul>
-      </div>
-      <div className={classes.hideShowBtn} onClick={hideShowHeader}><FontAwesomeIcon style={{transform:"scale(2,1)"}} icon={hideShowIcon} /></div>
-    </div>
+    <HeaderUI
+      color="primary"
+      id="header"
+      height="5rem"
+      style={{
+        background: _background,
+        outline: "none",
+        boxShadow: "0px 2px 14px rgba(0, 0, 0, .15)",
+      }}
+      expandable={false}
+    >
+      <HeaderGroup></HeaderGroup>
+      <HeaderGroup></HeaderGroup>
+      <HeaderGroup style={{ marginRight: "2rem", gap: "1rem" }}>
+        <HeaderItem>
+          <Link color="primary">Home</Link>
+        </HeaderItem>
+        <HeaderItem>
+          <Link
+            color="primary"
+            ref={categoryRef}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "0.25rem",
+            }}
+            onClick={() => setOpen(!open)}
+          >
+            <Text disableColor>Category</Text>
+            <IconCaretDown size="1rem" />
+          </Link>
+          <Menu
+            variant="neumorph"
+            open={open}
+            anchorElement={categoryRef.current}
+            color="primary"
+            popperStyles={{
+              placement: "bottom",
+              modifiers: [
+                {
+                  name: "offset",
+                  options: {
+                    offset: [0, 16],
+                  },
+                },
+              ],
+            }}
+          >
+            <MenuItem>Projects</MenuItem>
+            <MenuItem>Certificates</MenuItem>
+            <MenuItem>Skills</MenuItem>
+            <MenuItem>Hobbies</MenuItem>
+          </Menu>
+        </HeaderItem>
+        <HeaderItem>
+          <Link color="primary">Blog</Link>
+        </HeaderItem>
+        <HeaderItem>
+          <IconButton
+            color="primary"
+            icon={<IconSettings />}
+            alt="Settings"
+            size="small"
+            variant="neumorph"
+          />
+        </HeaderItem>
+      </HeaderGroup>
+    </HeaderUI>
   );
 };
 
