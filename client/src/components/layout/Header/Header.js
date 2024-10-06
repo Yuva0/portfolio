@@ -9,15 +9,16 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  useUpdateTheme,
 } from "stelios";
+import colorTokens from "../../../tokens/color/color-tokens.json";
 import { Link as ReactRouterLink, NavLink } from "react-router-dom";
-import { IconCaretDown, IconDownload, IconSettings } from "@tabler/icons-react";
-import classes from "./css/Header.module.css";
-import logo from "../../../assets/images/logo.png";
-import name from "../../../assets/images/name.png";
-import SettingsButton from "./Settings/SettingsButton";
-import NavigationButton from "./Navigation/NavigationButton";
-import CategoryButton from "./Category/CategoryButton";
+import {
+  IconCaretDown,
+  IconSettings,
+  IconSun,
+  IconMoon
+} from "@tabler/icons-react";
 
 const Header = (props) => {
   const colorPalette = useTheme().theme.colorPalette;
@@ -25,6 +26,19 @@ const Header = (props) => {
     colorPalette.primary.appearance === "dark" ? "#202124" : "white";
   const categoryRef = useRef(null);
   const [open, setOpen] = useState(false);
+  const [appearance, setAppearance] = useState("light");
+  const updateTheme = useUpdateTheme();
+
+  const _toggleTheme = () => {
+    updateTheme({
+      appearance: appearance === "light" ? "dark" : "light",
+      accents: {
+        "primary": colorTokens.accent.primary,
+        "black": colorTokens.accent.black
+      }
+    })
+    setAppearance((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   return (
     <HeaderUI
@@ -66,7 +80,7 @@ const Header = (props) => {
             anchorElement={categoryRef.current}
             color="primary"
             style={{
-              boxShadow: "0 6px 6px rgba(0, 0, 0, .1)"
+              boxShadow: "0 6px 6px rgba(0, 0, 0, .1)",
             }}
             popperStyles={{
               placement: "bottom",
@@ -88,6 +102,16 @@ const Header = (props) => {
         </HeaderItem>
         <HeaderItem>
           <Link color="primary">Blog</Link>
+        </HeaderItem>
+        <HeaderItem>
+          <IconButton
+            color="primary"
+            icon={appearance === "light" ? <IconSun /> : <IconMoon />}
+            alt="Sun Theme"
+            size="small"
+            variant="neumorph"
+            onClick={_toggleTheme}
+          />
         </HeaderItem>
         <HeaderItem>
           <IconButton

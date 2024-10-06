@@ -10,8 +10,11 @@ import Education from '../../education/Education';
 import HobbySet from '../../hobbyset/HobbySet';
 import LineDiamondLine from '../../ui/linediamondline/LineDiamondLine';
 import Intropage from '../../intropage/Intropage';
+import { useTheme } from 'stelios';
 
 const Homepage = () => {
+
+    const colorPalette = useTheme().theme.colorPalette;
 
     // Calculate window width - Do not use hooks!
     let certificateset = <CertificateSet title="Latest Certificates" time="latest" type="story" limit="8"/>
@@ -20,7 +23,7 @@ const Homepage = () => {
     }
 
     return (
-        <div className={classes.homepage}>
+        <div className={classes.homepage} style={{backgroundColor: colorPalette.primary.appearance === "light" ? "white" : "#202124"}}>
             {/* <CoverPage /> */}
             <Intropage/>
             {/* <Motto/> */}
