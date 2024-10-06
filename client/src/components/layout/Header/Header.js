@@ -12,7 +12,7 @@ import {
   useUpdateTheme,
 } from "stelios";
 import colorTokens from "../../../tokens/color/color-tokens.json";
-import { Link as ReactRouterLink, NavLink } from "react-router-dom";
+import { Link as ReactRouterLink, NavLink, useNavigate } from "react-router-dom";
 import {
   IconCaretDown,
   IconSettings,
@@ -28,6 +28,7 @@ const Header = (props) => {
   const [open, setOpen] = useState(false);
   const [appearance, setAppearance] = useState("light");
   const updateTheme = useUpdateTheme();
+  const navigate = useNavigate();
 
   const _toggleTheme = () => {
     updateTheme({
@@ -56,7 +57,7 @@ const Header = (props) => {
       <HeaderGroup></HeaderGroup>
       <HeaderGroup style={{ marginRight: "2rem", gap: "1rem" }}>
         <HeaderItem>
-          <Link color="primary">Home</Link>
+          <Link color="primary" onClick={() => navigate("/")}>Home</Link>
         </HeaderItem>
         <HeaderItem>
           <Link
@@ -69,6 +70,7 @@ const Header = (props) => {
               alignItems: "center",
               gap: "0.25rem",
             }}
+            
             onClick={() => setOpen(!open)}
           >
             <Text disableColor>Category</Text>
@@ -80,6 +82,7 @@ const Header = (props) => {
             anchorElement={categoryRef.current}
             color="primary"
             style={{
+              backgroundColor: _background,
               boxShadow: "0 6px 6px rgba(0, 0, 0, .1)",
             }}
             popperStyles={{
@@ -101,7 +104,7 @@ const Header = (props) => {
           </Menu>
         </HeaderItem>
         <HeaderItem>
-          <Link color="primary">Blog</Link>
+          <Link  color="primary" onClick={() => navigate("/blogs")}>Blog</Link>
         </HeaderItem>
         <HeaderItem>
           <IconButton

@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
-import {Link} from 'react-router-dom';
+import {Link as RouterLink} from 'react-router-dom';
 import classes from './css/ProjectSet.module.css';
 import ReactPaginate from "react-paginate";
 import ProjectSetItem from './ProjectSetItem.js';
 import getAxiosRequest from '../../util/getAxiosRequest';
+import { Text, Link } from 'stelios';
+import { IconArrowRight } from '@tabler/icons-react';
 
 const PER_PAGE = 12;
 
@@ -14,6 +16,7 @@ const ProjectSet = (props) => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
+  const navigate = useNavigate();
 
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -55,7 +58,7 @@ const ProjectSet = (props) => {
     );
   }
   else if (posts.length === 0) {
-    currentPageData = <p>No Posts found</p>
+    currentPageData = <Text variant='span' color="primary">No Posts found</Text>
     reactPaginate = undefined;
   }
   else {
@@ -81,9 +84,9 @@ const ProjectSet = (props) => {
  
 
   return (
-    <div className={classes.projectSetWrapper}>
-      <div className={`${classes.projectSetTitle} title`}><h3><Link to={"/projects"}><span className={classes.arrow}>{props.title} </span></Link></h3></div>
-      <div className={classes.projectSetCollection}>
+    <div>
+      <Link variant="hover" color="primary" onClick={() => navigate("/projects")} style={{display: "flex", alignItems: "center", gap: "0.5rem"}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
+      <div className={classes.projectSetCollection} style={{marginTop: "1rem"}}>
         {currentPageData}
       </div>
       {reactPaginate}

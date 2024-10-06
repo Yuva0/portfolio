@@ -26,7 +26,7 @@ const Homepage = () => {
         <div className={classes.homepage} style={{backgroundColor: colorPalette.primary.appearance === "light" ? "white" : "#202124"}}>
             {/* <CoverPage /> */}
             <Intropage/>
-            {/* <Motto/> */}
+            <Motto/>
             <ProjectSet title="Latest Projects" time="latest" limit="3"/>
             {certificateset}
             <Experience/>

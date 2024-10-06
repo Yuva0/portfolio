@@ -1,10 +1,12 @@
 import { useState,useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import {Link as ReactLink} from 'react-router-dom';
 import LineDiamondLine from '../ui/linediamondline/LineDiamondLine';
 import SkillSetItem from './SkillSetItem';
 import getAxiosRequest from '../../util/getAxiosRequest';
 import ReactPaginate from "react-paginate";
 import classes from './css/SkillSet.module.css'
+import { Link, Text } from 'stelios';
+import { IconArrowRight } from '@tabler/icons-react';
 
 const PER_PAGE = 30;
 
@@ -69,8 +71,8 @@ const SkillSet = (props) => {
     return (
         <div className={classes.skillSetWrapper}> 
             <LineDiamondLine/>
-            <div className={classes.skillSetTitle}><h3><Link to={"/skills"}><span className={classes.arrow}>{props.title} </span></Link></h3></div>
-            <div className={classes.skillSetItemWrapper}>
+            <Link color="primary" size="large" className={classes.skillSetTitle} style={{marginTop: "1rem", justifyContent: "center", alignItems: "center", display: 'flex'}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
+            <div className={classes.skillSetItemWrapper} style={{marginTop: "2rem"}}>
                 {currentPageData}
             </div>
             {reactPaginate}

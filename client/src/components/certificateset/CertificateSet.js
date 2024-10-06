@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
 import classes from './css/CertificateSet.module.css';
-import {Link} from 'react-router-dom';
+import {Link as ReactLink} from 'react-router-dom';
 import CertificateSetItem from './CertificateSetItem.js';
 import getAxiosRequest from '../../util/getAxiosRequest';
 import ReactPaginate from "react-paginate";
+import { Text, useTheme, Link } from 'stelios';
+import { IconArrowRight } from '@tabler/icons-react';
 
 const PER_PAGE = 20;
 
@@ -14,6 +16,8 @@ const CertificateSet = (props) => {
   const [certificates, setCertificates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
+  const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
+  const navigate = useNavigate();
     
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -77,8 +81,8 @@ const CertificateSet = (props) => {
 
   return (
     <div className={classes.certificateSetWrapper}>
-      <div className={`${classes.certificateSetTitle} title`}><h3><Link to={"/certificates"}><span className={classes.arrow}>{props.title} </span></Link></h3></div>
-      <div className={classes.certificateSetCollection}>
+      <Link variant="hover" color="primary" onClick={() => navigate("/projects")} style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "0.5rem"}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
+      <div className={classes.certificateSetCollection} style={{marginTop: "1rem"}}>
         {currentPageData}
       </div>
       {reactPaginate}

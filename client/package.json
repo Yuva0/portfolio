@@ -21,7 +21,7 @@
     "react-router-dom": "^6.5.0",
     "react-scripts": "5.0.1",
     "react-spinning-wheel": "^2.1.0",
-    "stelios": "^1.0.55",
+    "stelios": "^1.0.57",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -5,10 +5,12 @@ import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
 import { useState, useEffect } from 'react';
 import LineDiamondLine from '../ui/linediamondline/LineDiamondLine';
+import { useTheme } from 'stelios';
 
 const Motto = () => {
     const [motto, setMotto] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const colorPalette = useTheme().theme.colorPalette;
 
     useEffect(() => {
         let isMounted = true
@@ -36,9 +38,9 @@ const Motto = () => {
     else{
         return (
             <div className={classes.mottoWrapper}> 
-            <LineDiamondLine/>
-            <MottoContent quote = {motto[0].motto} author = {motto[0].author}/> 
-            <LineDiamondLine/>
+                <LineDiamondLine/>
+                <MottoContent quote = {motto[0].motto} author = {motto[0].author}/> 
+                <LineDiamondLine/>
             </div>
         );
     }
