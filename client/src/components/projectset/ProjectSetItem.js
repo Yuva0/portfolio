@@ -38,13 +38,13 @@ const ProjectSetItem = (props) => {
   let difficulty;
   if (props.difficultyType === 3){
     ribbon = <Text preciseColor={_color} variant="span" size="small" className={classes.ribbon}>Difficult</Text>
-    difficulty = <Text color="primary">Difficult</Text>
+    difficulty = <Text color="primary" style={{marginTop: "0.5rem"}}>Difficult</Text>
   }
   else if (props.difficultyType === 2){
-    difficulty = <Text color="black">Medium</Text>
+    difficulty = <Text color="black" style={{marginTop: "0.5rem"}}>Medium</Text>
   }
   else if (props.difficultyType === 1){
-    difficulty = <Text color="black">Easy</Text>
+    difficulty = <Text color="black" style={{marginTop: "0.5rem"}}>Easy</Text>
   }
   let coverImage;
   if(props.coverImage){
@@ -66,19 +66,17 @@ const ProjectSetItem = (props) => {
   //   </div>
   //   );
   return (
-    <Card variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary">
+    <Card variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary" className={classes.projectSetItemWrapper}>
       <>
         <div onClick={projectClickHandler}>
-        {/* <Link to={{ pathname: `/project/${props.idTitle}`, query: { title: props.title } }}> */}
           {coverImage}
           <div className={classes.content}>
             <Text variant="paragraph" size="medium" preciseColor={_color} style={{marginTop: "1rem"}}>{props.title}</Text>
             {category}
             <Text size="small" preciseColor={_color} style={{marginTop: "1rem"}}>{props.description}</Text>
             {difficulty}
-            <Text size="small" preciseColor={_color} style={{marginTop: "1rem"}}>{day} {month} {year}</Text>
+            <Text size="small" preciseColor={_color} style={{marginTop: "0.5rem"}}>{day} {month} {year}</Text>
           </div>
-          {/* </Link> */}
         </div>
         {projectModalActive && <ProjectModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
       </>

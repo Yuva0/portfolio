@@ -27,6 +27,16 @@ const ModalOverlay = (props) => {
 
 const Resume = (props) => {
     const [theme, setTheme] = React.useState("vscode");
+
+    const handleDownloadResume = (theme) => {
+        if (theme === "default") {
+            window.open("https://drive.google.com/uc?export=download&id=1W-94nfA8bh8ZxruTvKEMTzTzM8NvaZHC");
+        }
+        else {
+            window.open("https://drive.google.com/uc?export=download&id=1tryR6c3wMNq1jRBaCvrm5HMa-nfbTD7B");
+        }
+    }
+
     return (
     <>
         {ReactDOM.createPortal(<Backdrop onClose={props.onClose}/>, portalElement)}
@@ -43,7 +53,7 @@ const Resume = (props) => {
                 <div style={{width: "100%", marginTop: "1rem", borderRadius: "8px"}}>
                     <img style={{width: "100%", borderRadius: "8px"}} src={theme === "vscode" ? resume_vscode: resume_default} alt="resume"/>
                 </div>
-                <Button variant='neumorph' color='primary' style={{marginTop: "2rem", backgroundColor: colors.accent.primary, color: "white", border:0 }}><Text disableColor>Download {theme==='vscode' ? "VS Code" : "Default"} Resume</Text></Button>
+                <Button variant='neumorph' color='primary' style={{marginTop: "2rem", backgroundColor: colors.accent.primary, color: "white", border:0 }} onClick={handleDownloadResume}><Text disableColor>Download {theme==='vscode' ? "VS Code" : "Default"} Resume</Text></Button>
         </ModalOverlay>, portalElement)}
     </>
     )

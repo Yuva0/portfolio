@@ -3,6 +3,7 @@ import fetchDate from '../../util/fetchDate';
 import firstLetterUpper from '../../util/firstLetterUpper';
 import classes from './css/BlogSetItem.module.css';
 import { Link } from 'react-router-dom';
+import { Card, Text, useTheme } from 'stelios';
 // import ProjectModal from '../modals/ProjectModal';
 // import { Fragment } from 'react';
 
@@ -20,6 +21,7 @@ const BlogSetItem = (props) => {
 //     document.getElementsByTagName("body")[0].classList.remove("hideOverflow");
 //   }
   const [day,month,year] = fetchDate(props.date);
+  const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
 
   let category;
   if (props.category) {
@@ -28,20 +30,20 @@ const BlogSetItem = (props) => {
       categoryInner = categoryInner + firstLetterUpper(props.category[i]) + ", ";
     }
     let categoryVal = categoryInner+firstLetterUpper(props.category[props.category.length-1]);
-    category = <div className={classes.category}><h6>{categoryVal}</h6></div>
+    category = <Text size="small" color="black" style={{marginTop: "0.25rem"}} className={classes.category}>{categoryVal}</Text>
   }
 
   let ribbon;
   let difficulty;
   if (props.difficultyType === 3){
-    ribbon = <span className={classes.ribbon}><h6>Difficult</h6></span>
-    difficulty = <div className={classes.difficultyGold}><h6>Difficult</h6></div>
+    ribbon = <Text preciseColor={_color} variant="span" size="small" className={classes.ribbon}>Difficult</Text>
+    difficulty = <Text color="primary" style={{marginTop: "0.5rem"}}>Difficult</Text>
   }
   else if (props.difficultyType === 2){
-    difficulty = <div className={classes.difficulty}><h6>Medium</h6></div>
+    difficulty = <Text color="black" style={{marginTop: "0.5rem"}}>Medium</Text>
   }
   else if (props.difficultyType === 1){
-    difficulty = <div className={classes.difficulty}><h6>Easy</h6></div>
+    difficulty = <Text color="black" style={{marginTop: "0.5rem"}}>Easy</Text>
   }
   let coverImage;
   if(props.coverImage){
@@ -49,36 +51,21 @@ const BlogSetItem = (props) => {
   }
 
   return (
-    <Fragment>
-      <Link className={classes.blogSetItemWrapper} to={{ pathname: `/blog/${props.idTitle}`, query: { title: props.title } }}>
+    <Card variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary" className={classes.blogSetItemWrapper}>
+      <>
+      <Link  to={{ pathname: `/blog/${props.idTitle}`, query: { title: props.title } }} style={{flex: "1 1 0"}}>
       {coverImage}
       <div className={classes.content}>
-        <div className={classes.title}><h3>{props.title}</h3></div>
+        <Text variant="paragraph" size="medium" preciseColor={_color} style={{marginTop: "0.5rem"}}>{props.title}</Text>
         {category}
-        <div className={classes.description}><h5>{props.description}</h5></div>
+        <Text size="small" preciseColor={_color} style={{marginTop: "1rem"}}>{props.description}</Text>
         {difficulty}
-        <div className={classes.date}><h6>{day} {month} {year}</h6></div>
+        <Text size="small" preciseColor={_color} style={{marginTop: "0.5rem"}}>{day} {month} {year}</Text>
       </div>
       </Link>
-    </Fragment>
+      </>
+    </Card>
     );
-//   return (
-//     <Fragment>
-//         <div className={classes.projectSetItemWrapper} onClick={projectClickHandler}>
-//         {/* <Link to={{ pathname: `/project/${props.idTitle}`, query: { title: props.title } }}> */}
-//           {coverImage}
-//           <div className={classes.content}>
-//             <div className={classes.title}><h3>{props.title}</h3></div>
-//             {category}
-//             <div className={classes.description}><h5>{props.description}</h5></div>
-//             {difficulty}
-//             <div className={classes.date}><h6>{day} {month} {year}</h6></div>
-//           </div>
-//           {/* </Link> */}
-//         </div>
-//         {projectModalActive && <ProjectModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
-//     </Fragment>
-//   );
 };
 
 export default BlogSetItem;

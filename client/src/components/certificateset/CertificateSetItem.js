@@ -13,8 +13,7 @@ const CertificateSetItem = (props) => {
       categoryInner = categoryInner + props.category[i].charAt(0).toUpperCase() + props.category[i].slice(1) + ", ";
     }
     let categoryVal = categoryInner+props.category[props.category.length-1].charAt(0).toUpperCase() + props.category[props.category.length-1].slice(1);
-    category = <div className={classes.category}><h6>{categoryVal}</h6></div>
-    // category = <div className={classes.category}><h5>{props.category.charAt(0).toUpperCase() + props.category.slice(1)}</h5></div>;
+    category = <Text preciseColor={_color} variant="span" size="small">{categoryVal}</Text>
   }
 
   const [projectModalActive, setProjectModalActive] = useState(false);
@@ -29,39 +28,9 @@ const CertificateSetItem = (props) => {
     document.getElementsByTagName("body")[0].classList.remove("hideOverflow");
   }
 
-  // let difficulty;
-  // if (props.difficultyType === 3){
-  //   difficulty = <div className={classes.difficultyGold}><h6>Difficult</h6></div>
-  // }
-  // else if (props.difficultyType === 2){
-  //   difficulty = <div className={classes.difficulty}><h6>Medium</h6></div>
-  // }
-  // else if (props.difficultyType === 1){
-  //   difficulty = <div className={classes.difficulty}><h6>Easy</h6></div>
-  // }
-
-  // return (
-  //   <div className={classes.certificateSetItemWrapper}>
-  //     <Link to={{ pathname: `/certificate/${props.idTitle}`, query: { title: props.title } } }>
-     
-  //     <div className={classes.content}>
-  //       <div className={classes.title}><h5>{props.title}</h5></div>
-  //       {/* <div className={classes.date}><h5>{day} {month} {year}</h5></div> */}
-  //       {category}
-  //       {/* <div className={classes.description}><h4>{props.description}</h4></div> */}
-  //       {/* {difficulty} */}
-  //     </div>
-  //     <div className={classes.image}>
-  //       <img src={props.coverImage} alt={props.imageAlt} />
-  //       {/* {ribbon} */}
-  //     </div>
-  //     </Link>
-  //   </div>
-  // );
-
   return (
     <>
-      <Capsule color="primary" variant="neumorph" image={props.coverImage} imageAlt={props.imageAlt} title={<Text color="primary" size="small">{props.title}</Text>} description={<Text preciseColor={_color} variant="span" fontSize='0.75rem'>{category}</Text>} onClick={certificateClickHandler} style={{flexBasis: "48%"}}/>
+      <Capsule color="primary" variant="neumorph" height='100px' image={props.coverImage} imageAlt={props.imageAlt} title={<Text color="primary" size="medium">{props.title}</Text>} description={category} onClick={certificateClickHandler} style={{flexBasis: "48%"}} className={classes.certificateSetItemWrapper}/>
       {projectModalActive && <CertificateModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
     </>
   );

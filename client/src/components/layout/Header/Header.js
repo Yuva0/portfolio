@@ -12,7 +12,7 @@ import {
   useUpdateTheme,
 } from "stelios";
 import colorTokens from "../../../tokens/color/color-tokens.json";
-import { Link as ReactRouterLink, NavLink, useNavigate } from "react-router-dom";
+import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import {
   IconCaretDown,
   IconSettings,
@@ -50,7 +50,7 @@ const Header = (props) => {
         background: _background,
         outline: "none",
         boxShadow: "0px 2px 14px rgba(0, 0, 0, .15)",
-        zIndex:1
+        zIndex:3
       }}
       expandable={false}
     >
@@ -98,10 +98,10 @@ const Header = (props) => {
               ],
             }}
           >
-            <MenuItem>Projects</MenuItem>
-            <MenuItem>Certificates</MenuItem>
-            <MenuItem>Skills</MenuItem>
-            <MenuItem>Hobbies</MenuItem>
+            <MenuItem><ReactRouterLink to="/projects"><Text color="primary">Projects</Text></ReactRouterLink></MenuItem>
+            <MenuItem><ReactRouterLink to="/certificates"><Text color="primary">Certificates</Text></ReactRouterLink></MenuItem>
+            <MenuItem><ReactRouterLink to="/skills"><Text color="primary">Skills</Text></ReactRouterLink></MenuItem>
+            {/* <MenuItem><ReactRouterLink to="/projects"><Text color="primary">Cards</Text></ReactRouterLink></MenuItem> */}
           </Menu>
         </HeaderItem>
         <HeaderItem>

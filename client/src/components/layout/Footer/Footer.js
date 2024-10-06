@@ -8,15 +8,15 @@ const Footer = () => {
     return (
         <div className={classes.footer}>
             <div className={classes.footerContent}>
-                <Text variant="div" fontSize='2rem' preciseColor="white" style={{textAlign: "center", marginTop: "24px"}}>Thank you for visiting!</Text>
-                <div className={classes.footerMenuComplete}>
+                <Text variant="div" fontSize='2rem' preciseColor="white" style={{textAlign: "center", marginTop: "36px"}}>Thank you for visiting!</Text>
+                <div className={classes.footerMenuComplete} style={{marginTop: "24px"}}>
                     <div className={classes.footerMenu}>
                         <div className={classes.footerMenuHeader}><Text variant="span" preciseColor='white'>Content</Text></div>
                         <List className={classes.footerMenuContent} style={{padding:"0 0 0 12px", margin: 0, display: "flex", flexDirection: "row", justifyContent: 'center', alignItems:"center"}}>
                             <ListItem><Link to="/"><Text preciseColor="white">Home</Text></Link></ListItem>
                             <ListItem><Link to="/projects"><Text preciseColor="white">Projects</Text></Link></ListItem>
                             <ListItem><Link to="/certificates"><Text preciseColor="white">Certificates</Text></Link></ListItem>
-                            <ListItem><Link to="/cards"><Text preciseColor="white">Cards</Text></Link></ListItem>
+                            <ListItem><Link to="/skills"><Text preciseColor="white">Skills</Text></Link></ListItem>
                         </List>
                     </div>
                     <div className={`${classes.footerMenu} ${classes.lastFooterMenu}`}>
