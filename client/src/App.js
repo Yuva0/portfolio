@@ -1,4 +1,5 @@
 import { Route, Routes} from 'react-router-dom';
+import colorTokens from "./tokens/color/color-tokens.json";
 
 import Homepage from "./components/pages/homepage/Homepage";
 import Header from './components/layout/Header/Header';
@@ -17,7 +18,7 @@ import { ThemeProvider } from 'stelios';
 function App() {
   return (
     <div className={classes.app}>
-      <ThemeProvider accents={{"primary": "#ee9b00"}}>
+      <ThemeProvider accents={{"primary": colorTokens.accent.primary, "black": colorTokens.accent.black}}>
         <Header/>
         <Routes>
           <Route path="/" element={<Homepage/>}/>
