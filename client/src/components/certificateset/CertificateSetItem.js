@@ -1,8 +1,10 @@
 import { useState,Fragment } from 'react';
 import classes from './css/CertificateSetItem.module.css';
 import CertificateModal from '../modals/CertificateModal';
+import { Capsule, Text, useTheme } from 'stelios';
 
 const CertificateSetItem = (props) => {
+  const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
 
   let category;
   if (props.category) {
@@ -58,20 +60,10 @@ const CertificateSetItem = (props) => {
   // );
 
   return (
-    <Fragment>
-        <div className={classes.certificateSetItemWrapper} onClick={certificateClickHandler}>
-        {/* <Link to={{ pathname: `/project/${props.idTitle}`, query: { title: props.title } }}> */}
-          <div className={classes.content}>
-            <div className={classes.title}><h5>{props.title}</h5></div>
-            {category}
-          </div>
-          <div className={classes.image}>
-            <img src={props.coverImage} alt={props.imageAlt} />
-          </div>
-          {/* </Link> */}
-        </div>
-        {projectModalActive && <CertificateModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
-    </Fragment>
+    <>
+      <Capsule color="primary" variant="soft" image={props.coverImage} imageAlt={props.imageAlt} title={<Text color="primary" size="small">{props.title}</Text>} description={<Text preciseColor={_color} variant="span" fontSize='0.75rem'>{category}</Text>} onClick={certificateClickHandler} style={{flexBasis: "48%"}}/>
+      {projectModalActive && <CertificateModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
+    </>
   );
 };
 
