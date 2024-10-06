@@ -40,15 +40,15 @@ const AppContent = () => {
           element={<ArticlePage type="certificates" />}
         />
         <Route path="/skill/:idTitle" element={<ArticlePage type="skills" />} />
-        <Route
+        {/* <Route
           path="/hobby/:idTitle"
           element={<ArticlePage type="hobbies" />}
-        />
+        /> */}
         <Route path="/blog/:idTitle" element={<ArticlePage type="blogs" />} />
         <Route path="/projects/" element={<ProjectsPage />} />
         <Route path="/certificates/" element={<CertificatesPage />} />
         <Route path="/skills/" element={<SkillsPage />} />
-        <Route path="/hobbies" element={<HobbiesPage />} />
+        {/* <Route path="/hobbies" element={<HobbiesPage />} /> */}
         <Route path="/blogs" element={<BlogsPage />} />
       </Routes>
     </div>

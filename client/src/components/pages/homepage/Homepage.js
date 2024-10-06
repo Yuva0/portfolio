@@ -32,7 +32,7 @@ const Homepage = () => {
             <Experience/>
             <SkillSet title="High Rated Skills" time="latest" limit="6" />
             <Education/>
-            <HobbySet title="Hobbies" time="latest" limit="6" />
+            {/* <HobbySet title="Hobbies" time="latest" limit="6" /> */}
         </div>
     )
 };

@@ -2,7 +2,6 @@
   position: relative;
   flex-basis:14.3%;
   border-radius: 20px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +12,6 @@
 
 .skillSetItemWrapper:hover{
   transform: scale(1.05);
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .skillSetItemWrapper img{

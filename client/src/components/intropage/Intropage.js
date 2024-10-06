@@ -1,15 +1,19 @@
 import * as React from "react";
-import ButtonandSymbol from "../ui/ButtonAndSymbol/ButtonandSymbol";
-import classes from "./css/Intropage.module.css";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import profileImage from "../../assets/images/profile.jpg";
 import { Avatar, Button, Card, Text, useTheme } from "stelios";
 import colors from "../../tokens/color/color-tokens.json";
+import Resume from "./resume";
 
 const Intropage = () => {
     const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
+    const [showResume, setShowResume] = React.useState(false);
+
+    const onCloseModalHandler = () => {
+        setShowResume(false);
+    }
 
     return (
+        <>
         <Card
         variant="neumorph"
         color="primary"
@@ -27,7 +31,6 @@ const Intropage = () => {
             <Text
                 variant="paragraph"
                 color="primary"
-                // fontSize="1.25rem"
                 size="large"
             >
                 FrontEnd Developer
@@ -46,8 +49,8 @@ const Intropage = () => {
                 code.
             </Text>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem", gap: "4rem"}}>
-                <Button variant="neumorph" color="primary" style={{backgroundColor: colors.accent.primary, color: "white", border:0}}>View Resume</Button>
-                <Button variant="neumorph" color="primary">LinkedIn Profile</Button>
+                <Button variant="neumorph" color="primary" onClick={() => {setShowResume(true)}} style={{backgroundColor: colors.accent.primary, color: "white", border:0}}>View Resume</Button>
+                <Button variant="neumorph" color="primary" onClick={() => {window.open("https://www.linkedin.com/in/tanuj-sengupta-872a05129/")}}>LinkedIn Profile</Button>
             </div>
             </div>
             <div
@@ -77,6 +80,8 @@ const Intropage = () => {
             </div>
         </>
         </Card>
+        {showResume && (<Resume onClose={onCloseModalHandler}/>)}
+        </>
     );
 };
 

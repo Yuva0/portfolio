@@ -50,6 +50,7 @@ const Header = (props) => {
         background: _background,
         outline: "none",
         boxShadow: "0px 2px 14px rgba(0, 0, 0, .15)",
+        zIndex:1
       }}
       expandable={false}
     >

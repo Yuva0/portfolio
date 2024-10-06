@@ -61,7 +61,7 @@ const CertificateSetItem = (props) => {
 
   return (
     <>
-      <Capsule color="primary" variant="soft" image={props.coverImage} imageAlt={props.imageAlt} title={<Text color="primary" size="small">{props.title}</Text>} description={<Text preciseColor={_color} variant="span" fontSize='0.75rem'>{category}</Text>} onClick={certificateClickHandler} style={{flexBasis: "48%"}}/>
+      <Capsule color="primary" variant="neumorph" image={props.coverImage} imageAlt={props.imageAlt} title={<Text color="primary" size="small">{props.title}</Text>} description={<Text preciseColor={_color} variant="span" fontSize='0.75rem'>{category}</Text>} onClick={certificateClickHandler} style={{flexBasis: "48%"}}/>
       {projectModalActive && <CertificateModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
     </>
   );

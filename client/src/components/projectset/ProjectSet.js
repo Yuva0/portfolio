@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
-import {Link as RouterLink} from 'react-router-dom';
 import classes from './css/ProjectSet.module.css';
 import ReactPaginate from "react-paginate";
 import ProjectSetItem from './ProjectSetItem.js';

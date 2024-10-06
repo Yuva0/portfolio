@@ -16,7 +16,6 @@ const CertificateSet = (props) => {
   const [certificates, setCertificates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
-  const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
   const navigate = useNavigate();
     
   const [currentPage, setCurrentPage] = useState(0);

@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
-import {Link} from 'react-router-dom';
 import classes from './css/BlogSet.module.css';
 import ReactPaginate from "react-paginate";
 import BlogSetItem from './BlogSetItem.js';
 import getAxiosRequest from '../../util/getAxiosRequest';
+import { Text, Link } from 'stelios';
+import { IconArrowRight } from '@tabler/icons-react';
 
 const PER_PAGE = 12;
 
@@ -16,6 +17,7 @@ const BlogSet = (props) => {
   const params = useParams();
 
   const [currentPage, setCurrentPage] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let isMounted = true;
@@ -82,8 +84,8 @@ const BlogSet = (props) => {
 
   return (
     <div className={classes.blogSetWrapper}>
-      <div className={`${classes.blogSetTitle} title`}><h3><Link to={"/blogs"}><span className={classes.arrow}>{props.title} </span></Link></h3></div>
-      <div className={classes.blogSetCollection}>
+      <Link variant="hover" color="primary" onClick={() => navigate("/blogs")} style={{display: "flex", alignItems: "center", gap: "0.5rem"}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
+      <div className={classes.blogSetCollection} style={{marginTop: "1rem"}}>
         {currentPageData}
       </div>
       {reactPaginate}
