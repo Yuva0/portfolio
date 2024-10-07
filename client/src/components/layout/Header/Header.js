@@ -26,7 +26,7 @@ const Header = (props) => {
     colorPalette.primary.appearance === "dark" ? "#202124" : "white";
   const categoryRef = useRef(null);
   const [open, setOpen] = useState(false);
-  const [appearance, setAppearance] = useState("light");
+  const [appearance, setAppearance] = useState(colorTokens.appearance);
   const updateTheme = useUpdateTheme();
   const navigate = useNavigate();
 

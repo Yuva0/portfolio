@@ -63,6 +63,7 @@ function App() {
           primary: colorTokens.accent.primary,
           black: colorTokens.accent.black,
         }}
+        appearance={colorTokens.appearance}
       >
         <Header />
         <AppContent />

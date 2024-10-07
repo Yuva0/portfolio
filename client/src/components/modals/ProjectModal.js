@@ -36,7 +36,7 @@ const ProjectModal = (props) => {
     const [skill, setSkill] = useState([{title:"",content:"",idTitle:""}]);
     const [isLoading, setIsLoading] = useState(true);
     const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
-
+    const _primaryColor = useTheme().theme.colorPalette.primary.accentScale[10];
     useEffect(() => {
         let isMounted = true;
         const fetchSkill = async () => {
@@ -78,8 +78,8 @@ const ProjectModal = (props) => {
             {ReactDOM.createPortal(
             <ModalOverlay>
                 <div className={classes.closeModal} style={{display: "flex", justifyContent: "space-between", width: "100%"}}>
-                    <Text variant="span" className={classes.articleMode}><Link to={"/project/"+skill[0].idTitle} onClick={navigationToArticleHandler}><h6>Switch to article mode</h6></Link></Text>
-                    <span><FontAwesomeIcon icon={faTimes} onClick={props.onClose}/></span>
+                    <Text variant="span" className={classes.articleMode}><Link style={{color: _primaryColor}} to={"/project/"+skill[0].idTitle} onClick={navigationToArticleHandler}>Switch to article mode</Link></Text>
+                    <span><FontAwesomeIcon color={_color} icon={faTimes} onClick={props.onClose}/></span>
                 </div>
                 {content}
             </ModalOverlay>, portalElement)}

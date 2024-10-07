@@ -30,10 +30,10 @@ const Resume = (props) => {
 
     const handleDownloadResume = (theme) => {
         if (theme === "default") {
-            window.open("https://drive.google.com/uc?export=download&id=1W-94nfA8bh8ZxruTvKEMTzTzM8NvaZHC");
+            window.open("https://drive.google.com/uc?export=download&id=1NQFJvtImIGToxfv4jSGGBJtxyHHUtH0d");
         }
         else {
-            window.open("https://drive.google.com/uc?export=download&id=1tryR6c3wMNq1jRBaCvrm5HMa-nfbTD7B");
+            window.open("https://drive.google.com/uc?export=download&id=1eNO7UYY3GoTw6PCwYZXm6Ze5OktcR76p");
         }
     }
 

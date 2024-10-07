@@ -6,10 +6,6 @@
   margin-bottom: 4px;
 }
 
-.navigation a{
-  color:var(--mainTheme);
-}
-
 .name{
   margin-bottom:8px;
   font-family: var(--titleFont);

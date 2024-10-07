@@ -14,7 +14,6 @@
   width: 800px;
   left: calc(50% - 400px);
   max-height: 85vh;
-  background-color: var(--backgroundColorTheme);
   padding:24px 24px 36px 24px;
   box-sizing: border-box;
   border-radius: 14px;
@@ -36,11 +35,6 @@
   justify-content: space-between;
   align-items: center;
   font-size: 24px;
-  color:var(--accentTheme);
-}
-
-.articleMode a{
-  color:var(--accentTheme);
 }
 
 .closeModal span{
@@ -75,21 +69,12 @@
   margin-top:32px;
 }
 
-.interactionEventsTitle{
-  font-family: var(--titleFont);
-  color:var(--accentTheme);
-}
-
 .interactionEventsContent{
   margin-top:8px;
 }
 
 .likeButton{
   display: inline-block;
-}
-
-.modal a{
-  color: var(--mainTheme);
 }
 
 .modal a:hover{

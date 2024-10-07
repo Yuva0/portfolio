@@ -36,11 +36,6 @@
   justify-content: space-between;
   align-items: center;
   font-size: 24px;
-  color:var(--accentTheme);
-}
-
-.articleMode a{
-  color:var(--accentTheme);
 }
 
 .closeModal span{
@@ -75,25 +70,12 @@
   margin-top:32px;
 }
 
-.interactionEventsTitle{
-  font-family: var(--titleFont);
-  color:var(--accentTheme);
-}
-
 .interactionEventsContent{
   margin-top:8px;
 }
 
 .likeButton{
   display: inline-block;
-}
-
-.modal a{
-  color: var(--mainTheme);
-}
-
-.modal a:hover{
-  text-decoration: underline;
 }
 
 @media (max-width: 1200px) {
