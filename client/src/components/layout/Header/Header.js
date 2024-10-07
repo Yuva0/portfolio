@@ -34,7 +34,7 @@ const Header = (props) => {
     updateTheme({
       appearance: appearance === "light" ? "dark" : "light",
       accents: {
-        "primary": colorTokens.accent.primary,
+        "primary": colorPalette.primary.main,
         "black": colorTokens.accent.black
       }
     })

@@ -6,10 +6,6 @@
   margin-bottom: 4px;
 }
 
-.navigation a{
-  color:var(--mainTheme);
-}
-
 .name{
   margin-bottom:8px;
   font-family: var(--titleFont);
@@ -68,10 +64,6 @@
   width: 75%;
   object-fit: contain;
   border-radius: 2%;
-}
-
-.imageCaption a{
-  color:var(--mainTheme);
 }
 
 .imageCaption p{

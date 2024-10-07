@@ -1,12 +1,14 @@
 import classes from './css/Footer.module.css';
-import { List, ListItem, Text } from 'stelios';
+import { List, ListItem, Text, useTheme } from 'stelios';
 import { Link } from 'react-router-dom';
 import { Link as SteliosLink } from 'stelios';
 import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 
 const Footer = () => {
+    const colorPalette = useTheme().theme.colorPalette;
+    const _primaryBgColor = colorPalette.primary.accentScale[8];
     return (
-        <div className={classes.footer}>
+        <div className={classes.footer} style={{backgroundColor: _primaryBgColor}}>
             <div className={classes.footerContent}>
                 <Text variant="div" fontSize='2rem' preciseColor="white" style={{textAlign: "center", marginTop: "36px"}}>Thank you for visiting!</Text>
                 <div className={classes.footerMenuComplete} style={{marginTop: "24px"}}>

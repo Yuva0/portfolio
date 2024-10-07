@@ -39,7 +39,6 @@
     width:90px;
     max-width: 40%;
     height:26px;
-    background-color: var(--mainTheme);
     left:0;
     top:20px;
     display: flex;
@@ -55,7 +54,6 @@
     top:0;
     width:0;
     height:0;
-    border-top:13px solid var(--mainTheme);
     border-right:13px solid transparent
   }
   
@@ -66,7 +64,6 @@
     top:50%;
     width:0;
     height:0;
-    border-bottom: 13px solid var(--mainTheme);
     border-right: 13px solid transparent;
   }
   
@@ -91,15 +88,6 @@
   .description{
     margin-bottom: 6px;
     font-family: var(--descriptionFont);
-  }
-  
-  .difficulty{
-    margin-bottom: 2px;
-  }
-  
-  .difficultyGold{
-    margin-bottom: 2px;
-    color:var(--mainTheme);
   }
   
 @media only screen and (max-width: 900px) {

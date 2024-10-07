@@ -1,8 +1,6 @@
 .footer{
   width: 100%;
-  font-family: var(--titleFont);
   padding-bottom:12px;
-  background-color: var(--mainTheme);
   color:white;
   display: flex;
   justify-content: center;

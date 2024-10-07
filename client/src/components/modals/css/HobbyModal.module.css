@@ -88,10 +88,6 @@
   display: inline-block;
 }
 
-.modal a{
-  color: var(--mainTheme);
-}
-
 .modal a:hover{
   text-decoration: underline;
 }

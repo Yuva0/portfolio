@@ -4,13 +4,6 @@
 }
 
 :root{
-  --backgroundColorTheme: white;
-  --colorTheme: black;
-  --mainTheme: #ee9b00;
-
-  --textAlign: left;
-  --titleFont: 'Alegreya', serif;
-  --descriptionFont: 'Source Sans Pro', sans-serif;
   --verylargeWidth: 1200px;
   --largeWidth:1000px;
   --mediumWidth:800px;
