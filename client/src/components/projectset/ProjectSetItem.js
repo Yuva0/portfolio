@@ -8,7 +8,6 @@ import { Card, Text, useTheme } from 'stelios';
 
 
 const ProjectSetItem = (props) => {
-
   const [projectModalActive, setProjectModalActive] = useState(false);
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
 
@@ -51,31 +50,17 @@ const ProjectSetItem = (props) => {
     coverImage = <div className={classes.image}><img src={props.coverImage} alt={props.imageAlt} />{ribbon}</div>
   }
 
-  // return (
-  //   <div className={classes.articleSetItemWrapper}>
-  //     <Link to={{ pathname: `/project/${props.idTitle}`, query: { title: props.title } }}>
-  //     {coverImage}
-  //     <div className={classes.content}>
-  //       <div className={classes.title}><h3>{props.title}</h3></div>
-  //       {category}
-  //       <div className={classes.description}><h5>{props.description}</h5></div>
-  //       {difficulty}
-  //       <div className={classes.date}><h6>{day} {month} {year}</h6></div>
-  //     </div>
-  //     </Link>
-  //   </div>
-  //   );
   return (
     <>
     <Card clickable variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary" className={classes.projectSetItemWrapper} onClick={projectClickHandler}>
-        <div>
+        <div className={classes.projectSetItem}>
           {coverImage}
           <div className={classes.content}>
             <Text variant="paragraph" size="medium" preciseColor={_color} style={{marginTop: "1rem"}}>{props.title}</Text>
             {category}
-            <Text size="small" preciseColor={_color} style={{marginTop: "1rem"}}>{props.description}</Text>
+            <Text size="small" preciseColor={_color} style={{marginTop: "1rem"}} className={classes.description}>{props.description}</Text>
             {difficulty}
-            <Text size="small" preciseColor={_color} style={{marginTop: "0.5rem"}}>{day} {month} {year}</Text>
+            <Text size="small" preciseColor={_color} style={{marginTop: "0.5rem"}} className={classes.date}>{day} {month} {year}</Text>
           </div>
         </div>
     </Card>

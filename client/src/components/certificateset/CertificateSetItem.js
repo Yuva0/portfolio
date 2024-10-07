@@ -31,7 +31,7 @@ const CertificateSetItem = (props) => {
 
   return (
     <>
-      <Capsule clickable color="primary" variant="neumorph" height='100px' image={props.coverImage} imageAlt={props.imageAlt} title={<Text variant="span" color="primary" size="medium">{props.title}</Text>} description={category} onClick={certificateClickHandler} style={{flexBasis: "48%"}} className={classes.certificateSetItemWrapper}/>
+      <Capsule clickable color="primary" variant="neumorph" height='100px' image={props.coverImage} imageAlt={props.imageAlt} title={<Text variant="span" color="primary" size="medium">{props.title}</Text>} description={category} onClick={certificateClickHandler} className={classes.certificateSetItemWrapper}/>
       {projectModalActive && <CertificateModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
     </>
   );
