@@ -19,6 +19,7 @@ import {
   IconSun,
   IconMoon
 } from "@tabler/icons-react";
+import Settings from "./Settings/Settings";
 
 const Header = (props) => {
   const colorPalette = useTheme().theme.colorPalette;
@@ -117,15 +118,9 @@ const Header = (props) => {
             onClick={_toggleTheme}
           />
         </HeaderItem>
-        {/* <HeaderItem>
-          <IconButton
-            color="primary"
-            icon={<IconSettings />}
-            alt="Settings"
-            size="small"
-            variant="neumorph"
-          />
-        </HeaderItem> */}
+        <HeaderItem>
+          <Settings/>
+        </HeaderItem>
       </HeaderGroup>
     </HeaderUI>
   );
