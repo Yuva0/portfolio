@@ -66,9 +66,9 @@ const ProjectSetItem = (props) => {
   //   </div>
   //   );
   return (
-    <Card variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary" className={classes.projectSetItemWrapper}>
-      <>
-        <div onClick={projectClickHandler}>
+    <>
+    <Card clickable variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary" className={classes.projectSetItemWrapper} onClick={projectClickHandler}>
+        <div>
           {coverImage}
           <div className={classes.content}>
             <Text variant="paragraph" size="medium" preciseColor={_color} style={{marginTop: "1rem"}}>{props.title}</Text>
@@ -78,9 +78,9 @@ const ProjectSetItem = (props) => {
             <Text size="small" preciseColor={_color} style={{marginTop: "0.5rem"}}>{day} {month} {year}</Text>
           </div>
         </div>
-        {projectModalActive && <ProjectModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
-      </>
     </Card>
+        {projectModalActive && <ProjectModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
+    </>
   );
 };
 

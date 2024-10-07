@@ -2,17 +2,10 @@
     max-width: 100%;
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     border-radius: 10px;
-    transition: transform 0.5s;
     flex-basis: 23%;
     display: flex;
     flex-direction: row;
     cursor: pointer;
-}
-  
-  
-.certificateSetItemWrapper:hover{
-    transform: scale(1.05);
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
   
 .image{

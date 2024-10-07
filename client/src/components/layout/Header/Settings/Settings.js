@@ -53,7 +53,7 @@ const Settings = () => {
     return (
         <>
         <IconButton color="primary" size="small" variant="neumorph" icon={<IconSettings />} alt="Settings" onClick={() => setDrawerOpen(true)}/>
-        <Drawer color="primary" open={drawerOpen} onClose={() => setDrawerOpen(false)} hasCloseIcon title="Settings" position="right">
+        <Drawer size="small" color="primary" open={drawerOpen} onClose={() => setDrawerOpen(false)} hasCloseIcon title="Settings" position="right">
         <StyledDrawerChildren>
           {mobile && (
             <div>
@@ -100,6 +100,7 @@ const Settings = () => {
           <StyledDrawerChildrenItem>
             <div style={{ marginTop: "1rem" }}>
               <ColorPicker
+                size="medium"
                 variant="soft"
                 label="Website Color"
                 color="primary"

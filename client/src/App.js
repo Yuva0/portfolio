@@ -14,6 +14,7 @@ import SkillsPage from "./components/pages/skillspage/SkillsPage";
 import HobbiesPage from "./components/pages/hobbiespage/HobbiesPage";
 import BlogsPage from "./components/pages/blogspage/BlogsPage";
 import { ThemeProvider, useTheme } from "stelios";
+import VariantProvider from "./components/VariantProvider/VariantProvider";
 
 const AppContent = () => {
   const theme = useTheme().theme;
@@ -58,18 +59,20 @@ const AppContent = () => {
 function App() {
   return (
     <div className={classes.app}>
-      <ThemeProvider
-        accents={{
-          primary: colorTokens.accent.primary,
-          black: colorTokens.accent.black,
-        }}
-        appearance={colorTokens.appearance}
-      >
-        <Header />
-        <AppContent />
-        <Footer />
-        {/* <CookieOverlay /> */}
-      </ThemeProvider>
+      <VariantProvider variant="neumorph">
+        <ThemeProvider
+          accents={{
+            primary: colorTokens.accent.primary,
+            black: colorTokens.accent.black,
+          }}
+          appearance={colorTokens.appearance}
+        >
+          <Header />
+          <AppContent />
+          <Footer />
+          {/* <CookieOverlay /> */}
+        </ThemeProvider>
+      </VariantProvider>
     </div>
   );
 }

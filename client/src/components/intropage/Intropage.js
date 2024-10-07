@@ -6,6 +6,8 @@ import Resume from "./resume";
 
 const Intropage = () => {
     const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
+    const _primaryBgColor = useTheme().theme.colorPalette.primary.accentScale[8]
+    const _primaryColor = useTheme().theme.colorPalette.primary.accentContrast;
     const [showResume, setShowResume] = React.useState(false);
 
     const onCloseModalHandler = () => {
@@ -49,7 +51,7 @@ const Intropage = () => {
                 code.
             </Text>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem", gap: "4rem"}}>
-                <Button variant="neumorph" color="primary" onClick={() => {setShowResume(true)}} style={{backgroundColor: colors.accent.primary, color: "white", border:0}}>View Resume</Button>
+                <Button variant="neumorph" color="primary" onClick={() => {setShowResume(true)}} style={{backgroundColor: _primaryBgColor, color: _primaryColor , border:0}}>View Resume</Button>
                 <Button variant="neumorph" color="primary" onClick={() => {window.open("https://www.linkedin.com/in/tanuj-sengupta-872a05129/")}}>LinkedIn Profile</Button>
             </div>
             </div>

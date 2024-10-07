@@ -2,6 +2,7 @@ import { useState,Fragment } from 'react';
 import classes from './css/CertificateSetItem.module.css';
 import CertificateModal from '../modals/CertificateModal';
 import { Capsule, Text, useTheme } from 'stelios';
+import { useVariant } from '../VariantProvider/VariantProvider';
 
 const CertificateSetItem = (props) => {
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
@@ -30,7 +31,7 @@ const CertificateSetItem = (props) => {
 
   return (
     <>
-      <Capsule color="primary" variant="neumorph" height='100px' image={props.coverImage} imageAlt={props.imageAlt} title={<Text color="primary" size="medium">{props.title}</Text>} description={category} onClick={certificateClickHandler} style={{flexBasis: "48%"}} className={classes.certificateSetItemWrapper}/>
+      <Capsule clickable color="primary" variant="neumorph" height='100px' image={props.coverImage} imageAlt={props.imageAlt} title={<Text variant="span" color="primary" size="medium">{props.title}</Text>} description={category} onClick={certificateClickHandler} style={{flexBasis: "48%"}} className={classes.certificateSetItemWrapper}/>
       {projectModalActive && <CertificateModal idTitle={props.idTitle} onClose={closeModalHandler}/>}
     </>
   );
