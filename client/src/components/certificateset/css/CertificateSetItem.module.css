@@ -35,11 +35,9 @@
   
 .title{
     margin-bottom: 6px;
-    font-family: var(--titleFont);
 }
   
 .date{
-    color:var(--accentTheme);
     margin-bottom: 6px;
 }
   
@@ -50,15 +48,6 @@
   
 .description{
     margin-bottom: 6px;
-    font-family: var(--descriptionFont);
-}
-  
-.duration{
-    color:var(--accentTheme);
-}
-  
-.durationGold{
-    color:var(--mainTheme);
 }
 
 

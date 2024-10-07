@@ -9,7 +9,6 @@
   margin-top: 16px;
   margin-bottom: 16px;
   max-width: 100%;
-  /* background-color: var(--background);#2B343A; */
   position: relative;
 }
 
@@ -35,17 +34,11 @@
 .timeline-item{
   border-radius: 10px;
   width: 45%;
-  background-color: var(--timelineTheme); /* #333C42;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items:stretch;
 }
-
-/* .timeline-item div,ul{
-  margin-left:21px;
-  margin-right:21px;
-} */
 
 .timeline-item-position{
   margin-top:24px;
@@ -55,7 +48,6 @@
 
 .timeline-location{
   margin-top:8px;
-  background-color: var(--background);
   font-size: 14px;
   padding:4px;
   display: flex;
@@ -73,10 +65,6 @@
 .timeline-mini-description{
   margin-top:16px !important;
 }
-
-/* .timeline-description li{
-  margin-top:8px;
-} */
 
 .timeline-description-item{
   margin-top:8px;
@@ -98,22 +86,9 @@
   margin-right:21px;
 }
 
-/* .timeline-skills li{
-  flex:1;
-  text-align: center;
-  background-color: var(--backgroundColorTheme);
-  padding-left:8px;
-  padding-right: 8px;
-  padding-top:1px;
-  padding-bottom: 1px;
-  margin-top:8px;
-  margin-left: 8px;
-} */
-
 .timeline-skills-item{
   flex:1;
   text-align: center;
-  background-color: var(--backgroundColorTheme);
   padding-left:8px;
   padding-right: 8px;
   padding-top:1px;
@@ -137,7 +112,6 @@
 }
 
 .timeline-item-circle{
-  background-color: var(--mainTheme);
   width:50px;
   height:50px;
   border-radius: 50%;
@@ -152,15 +126,7 @@
 .time-line{
   position: absolute;
   left:50%;
-  background-color: var(--mainTheme);
   height: 100%;
-}
-
-.time-line{
-    position: absolute;
-    left:50%;
-    background-color: var(--mainTheme);
-    height: 100%;
 }
 
 @media (max-device-width:1200px){ /*Very Large Size -> when there are no changes in height but width reduces*/

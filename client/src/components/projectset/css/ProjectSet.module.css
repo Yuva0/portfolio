@@ -16,51 +16,6 @@
     margin-bottom: 24px;
   }
   
-  .arrow {
-    margin: 1em 0;
-  }
-  .arrow::after {
-    display: inline-block;
-    content: "\0279E";
-    -webkit-transition: transform 0.1s ease-out;
-    -moz-transition: transform 0.1s ease-out;
-    -ms-transition: transform 0.1s ease-out;
-    -o-transition: transform 0.1s ease-out;
-    transition: transform 0.1s ease-out;
-  }
-  .arrow:hover::after {
-    -webkit-transform: translateX(4px);
-    -moz-transform: translateX(4px);
-    -ms-transform: translateX(4px);
-    -o-transform: translateX(4px);
-    transform: translateX(4px);
-  }
-  
-  .pagination{
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    cursor: pointer;
-    margin-top: 64px;
-  }
-  
-  .pagination a{
-    padding:10px;
-    border: 1px solid var(--mainTheme);
-    color: var(--mainTheme);
-  }
-  
-  .pagination__link__active a{
-    color:var(--colorTheme);
-    background: var(--mainTheme);
-    border:1px solid var(--mainTheme);
-  }
-  
-  .pagination__link__disabled a{
-    color: var(--accentTheme);
-    border:1px solid var(--accentTheme);
-  }
-  
   /* iPad Devices */
   @media only screen and (max-width: 1200px) {
     .projectSetCollection{

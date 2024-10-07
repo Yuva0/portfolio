@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import fetchDate from '../../util/fetchDate';
 import firstLetterUpper from '../../util/firstLetterUpper';
 import classes from './css/BlogSetItem.module.css';
@@ -9,17 +9,6 @@ import { Card, Text, useTheme } from 'stelios';
 
 
 const BlogSetItem = (props) => {
-//   const [projectModalActive, setProjectModalActive] = useState(false);
-
-//   const projectClickHandler = () => {
-//     setProjectModalActive(() => true);
-//     document.getElementsByTagName("body")[0].classList.add("hideOverflow");
-//   };
-
-//   const closeModalHandler = () => {
-//     setProjectModalActive(() => false);
-//     document.getElementsByTagName("body")[0].classList.remove("hideOverflow");
-//   }
   const [day,month,year] = fetchDate(props.date);
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
 

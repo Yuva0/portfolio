@@ -1,18 +1,9 @@
 .blogHeader{
     padding:0 0 18px 0;
-  }   
-  
-  .navigation{
-    margin-bottom: 4px;
-  }
-  
-  .navigation a{
-    color:var(--mainTheme);
   }
   
   .name{
     margin-bottom:8px;
-    font-family: var(--titleFont);
     text-align: center;
   }
   
@@ -68,10 +59,6 @@
     width: 75%;
     object-fit: contain;
     border-radius: 2%;
-  }
-  
-  .imageCaption a{
-    color:var(--mainTheme);
   }
   
   .imageCaption p{

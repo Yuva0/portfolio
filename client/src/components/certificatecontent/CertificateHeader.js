@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
 import classes from './css/CertificateHeader.module.css';
 import fetchDate from '../../util/fetchDate';
@@ -11,9 +10,7 @@ const CertificateHeader = (props) => {
   if(props.category){
     categories = props.category.map((category,index) => {
       return (<span key={index}>
-        {/* <Link to={"/category/"+category.toLowerCase()} key={index}> */}
         {category.charAt(0).toUpperCase() + category.slice(1)}
-        {/* </Link> */}
         &nbsp;  &nbsp;   </span>);
     });
   }

@@ -15,7 +15,6 @@ import colorTokens from "../../../tokens/color/color-tokens.json";
 import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import {
   IconCaretDown,
-  IconSettings,
   IconSun,
   IconMoon
 } from "@tabler/icons-react";

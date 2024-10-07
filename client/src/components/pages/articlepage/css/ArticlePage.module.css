@@ -16,11 +16,6 @@
   margin-top:32px;
 }
 
-.interactionEventsTitle{
-  font-family: var(--titleFont);
-  color:var(--accentTheme);
-}
-
 .interactionEventsContent{
   margin-top:8px;
 }

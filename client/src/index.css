@@ -4,18 +4,10 @@
 }
 
 :root{
-  /* Background Color Theme - white, ochre-FFFBDD, black-202124 */
   --backgroundColorTheme: white;
-  /* Color Theme - (white, ochre)black, (black)white*/
   --colorTheme: black;
-  /* Only one main theme*/
   --mainTheme: #ee9b00;
-  /* (white, ochre)dark grey - #6c757d, (black) - light grey- #bfc0c0*/
-  --accentTheme: #6c757d;
-  /* (white)whitish - #e9ecef, (ochre)ochrish - #ffe6a7, (black)greyish - #6c757d */
-  --overlayTheme:#e9ecef;
-  /* (white)whitish - #F5F5F5, (ochre)ochrish - #FFE7AD, (black)greyish - #3A3B41 */
-  --timelineTheme:#F5F5F5;
+
   --textAlign: left;
   --titleFont: 'Alegreya', serif;
   --descriptionFont: 'Source Sans Pro', sans-serif;

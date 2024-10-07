@@ -3,21 +3,16 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
 import classes from './css/ProjectSet.module.css';
-import ReactPaginate from "react-paginate";
 import ProjectSetItem from './ProjectSetItem.js';
 import getAxiosRequest from '../../util/getAxiosRequest';
 import { Text, Link } from 'stelios';
 import { IconArrowRight } from '@tabler/icons-react';
-
-const PER_PAGE = 12;
 
 const ProjectSet = (props) => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
   const navigate = useNavigate();
-
-  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
     let isMounted = true;
@@ -48,7 +43,8 @@ const ProjectSet = (props) => {
     
   }, [props.time, props.type, params.category, props.limit]);
   
-  let currentPageData,pageCount,reactPaginate;
+  let currentPageData = posts.map((post,index) => <ProjectSetItem key={index} id={post._id} idTitle={post.idTitle} title={post.title} description={post.description} date={post.buildDate}
+  category={post.category} isDetailed = {post.isDetailed} coverImage={post.coverImage} imageAlt={post.imageAlt} difficultyType={post.difficultyType}/>);
 
   if(isLoading){
     return (<div>
@@ -57,30 +53,8 @@ const ProjectSet = (props) => {
     );
   }
   else if (posts.length === 0) {
-    currentPageData = <Text variant='span' color="primary">No Posts found</Text>
-    reactPaginate = undefined;
+    currentPageData = <Text variant='span' color="primary">No Projects found</Text>
   }
-  else {
-    pageCount = Math.ceil(posts.length / PER_PAGE);
-    const offset = currentPage * PER_PAGE;
-    currentPageData = posts.slice(offset, offset + PER_PAGE).map((post,index) => <ProjectSetItem key={index} id={post._id} idTitle={post.idTitle} title={post.title} description={post.description} date={post.buildDate}
-    category={post.category} isDetailed = {post.isDetailed} coverImage={post.coverImage} imageAlt={post.imageAlt} difficultyType={post.difficultyType}/>);
-
-    if(posts.length < PER_PAGE){
-      reactPaginate = undefined;
-    }
-    else{
-      reactPaginate = <ReactPaginate previousLabel={"Previous"} nextLabel={"Next"} pageCount={pageCount} onPageChange={handlePageClick} containerClassName={classes.pagination} previousLinkClassName={classes.pagination__link}
-      nextLinkClassName={classes.pagination__link} disabledClassName={classes.pagination__link__disabled} activeClassName={classes.pagination__link__active}/>
-    }
-  }
-
-  function handlePageClick({ selected: selectedPage }) {
-    setCurrentPage(selectedPage);
-    window.scrollTo(0, 0);
-  }
-
- 
 
   return (
     <div>
@@ -88,7 +62,6 @@ const ProjectSet = (props) => {
       <div className={classes.projectSetCollection} style={{marginTop: "1rem"}}>
         {currentPageData}
       </div>
-      {reactPaginate}
     </div>
   );
 };

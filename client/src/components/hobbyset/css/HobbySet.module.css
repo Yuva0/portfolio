@@ -46,31 +46,6 @@
   transform: translateX(4px);
 }
 
-.pagination{
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  cursor: pointer;
-  margin: 24px 0;
-}
-
-.pagination a{
-  padding:10px;
-  border: 1px solid var(--mainTheme);
-  color: var(--mainTheme);
-}
-
-.pagination__link__active a{
-  color:var(--colorTheme);
-  background: var(--mainTheme);
-  border:1px solid var(--mainTheme);
-}
-
-.pagination__link__disabled a{
-  color: var(--accentTheme);
-  border:1px solid var(--accentTheme);
-}
-
 @media only screen and (max-width: 400px) {
   .skillSetItemWrapper{
       row-gap: 24px;

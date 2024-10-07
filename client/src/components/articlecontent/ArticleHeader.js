@@ -2,17 +2,24 @@ import ReactMarkdown from 'react-markdown'
 import fetchDate from '../../util/fetchDate';
 import classes from './css/ArticleHeader.module.css';
 import { Text, useTheme } from 'stelios';
+import styled from 'styled-components';
+
+const StyledImageCaption = styled.div`
+  & a {
+    color: ${props => props.$linkColor};
+  }
+`;
 
 const ArticleHeader = (props) => {
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
+  const theme = useTheme().theme;
+  const _primaryColor = theme.colorPalette.primary.accentScale[10];
 
   let categories;
   if(props.category){
     categories = props.category.map((category,index) => {
       return (<span key={index}>
-        {/* <Link to={"/category/"+category.toLowerCase()} key={index}> */}
         {category.charAt(0).toUpperCase() + category.slice(1)}
-        {/* </Link> */}
         &nbsp;  &nbsp;   </span>);
     });
   }
@@ -50,7 +57,7 @@ const ArticleHeader = (props) => {
     else{
       imageToHalf = true;
     }
-    videoOrImage = <div className={classes.imageWithCaption}><div className={`${classes.image} ${imageToHalf && classes.imageToHalf}`}><img src={props.coverImage} alt={props.imageAlt}/></div><div className={classes.imageCaption}><ReactMarkdown>{props.imageCaption}</ReactMarkdown></div></div>
+    videoOrImage = <div className={classes.imageWithCaption}><div className={`${classes.image} ${imageToHalf && classes.imageToHalf}`}><img src={props.coverImage} alt={props.imageAlt}/></div><StyledImageCaption className={classes.imageCaption} $linkColor={_primaryColor}><ReactMarkdown>{props.imageCaption}</ReactMarkdown></StyledImageCaption></div>
     
   }
 

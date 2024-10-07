@@ -1,13 +1,3 @@
-.heart{
-  font-size: 32px;
-  cursor: pointer;
-  color:var(--colorTheme);
-}
-
-.notLiked:hover{
-  color:var(--accentTheme);
-}
-
 .liked{
   color:#e63946;
 }

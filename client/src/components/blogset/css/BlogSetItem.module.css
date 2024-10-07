@@ -9,10 +9,6 @@
     cursor: pointer;
   }
   
-  /* .projectSetItemWrapper a{
-    height:100%;
-  } */
-  
   .blogSetItemWrapper:hover{
     transform: scale(1.05);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -39,7 +35,6 @@
     width:90px;
     max-width: 40%;
     height:26px;
-    background-color: var(--mainTheme);
     left:0;
     top:20px;
     display: flex;
@@ -55,8 +50,6 @@
     top:0;
     width:0;
     height:0;
-    border-top:13px solid var(--mainTheme);
-    border-right:13px solid transparent
   }
   
   .ribbon::after{
@@ -66,7 +59,6 @@
     top:50%;
     width:0;
     height:0;
-    border-bottom: 13px solid var(--mainTheme);
     border-right: 13px solid transparent;
   }
   
@@ -76,7 +68,6 @@
   
   .title{
     margin-bottom: 4px;
-    font-family: var(--titleFont);
   }
   
   .date{
@@ -90,17 +81,6 @@
   
   .description{
     margin-bottom: 6px;
-    font-family: var(--descriptionFont);
-  }
-  
-  .difficulty{
-    margin-bottom: 2px;
-    color:var(--accentTheme);
-  }
-  
-  .difficultyGold{
-    margin-bottom: 2px;
-    color:var(--mainTheme);
   }
   
 @media only screen and (max-width: 900px) {
@@ -125,11 +105,6 @@
       display: flex;
       flex-direction: row;
     }
-  
-    /* .articleSetItemWrapper a{
-      display: flex;
-      flex-direction: row;
-    } */
   
     .image{
       width:40%;
@@ -192,9 +167,6 @@
  }
 
   @media only screen and (max-width: 300px) {
-    /* .blogSetItemWrapper a{
-      flex-direction: column;
-    } */
     .blogSetItemWrapper{
       flex-direction: column;
     }

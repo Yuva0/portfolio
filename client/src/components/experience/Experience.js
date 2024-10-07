@@ -4,10 +4,19 @@ import classes from './css/Experience.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationPin,faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { Card, List, ListItem, Tag, Text, useTheme } from 'stelios';
+import styled from 'styled-components';
+
+const StyledTimeline = styled.div`
+  background-color: ${props => props.$timelineColor};
+`;
+const StyledTimelineItemCircle = styled.div`
+  background-color: ${props => props.$circleColor};
+`;
 
 const Experience = () => {
     const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
-
+    const _primaryBgColor = useTheme().theme.colorPalette.primary.accentScale[8];
+    
     return (
         <div>
             <Text size="large" color="primary" className={`${classes.experienceTitle} title`}>Experience</Text>
@@ -37,7 +46,7 @@ const Experience = () => {
                     </Card>
                 </div>
                 <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]}`}>
-                    <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><div className={classes["timeline-item-circle"]}></div></div>
+                    <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
                     <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                         <>
                             <Text preciseColor={_color}>Software Developer</Text>
@@ -59,12 +68,12 @@ const Experience = () => {
                             </List>
                         </>
                     </Card>
-                    <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><div className={`${classes["timeline-item-circle"]} ${classes["timeline-item-visible"]}`}></div></div>
+                    <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={`${classes["timeline-item-circle"]} ${classes["timeline-item-visible"]}`}/></div>
                     <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
                 </div>
                 <div className={`${classes["timeline-row"]} ${classes["timeline-row-right"]}`}>
                     <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
-                    <div className={classes["timeline-circle"]}><div className={classes["timeline-item-circle"]}></div></div>
+                    <div className={classes["timeline-circle"]}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
                     <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                         <>
                             <Text preciseColor={_color}>Project Intern</Text>
@@ -87,7 +96,7 @@ const Experience = () => {
                     </Card>
                 </div>
                 <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]}`}>
-                    <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><div className={classes["timeline-item-circle"]}></div></div>
+                    <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
                     <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                         <>
                             <Text preciseColor={_color}>Web Developer Intern</Text>
@@ -108,10 +117,10 @@ const Experience = () => {
                             </List>
                         </>
                     </Card>
-                    <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><div className={`${classes["timeline-item-circle"]} ${classes["timeline-item-visible"]}`}></div></div>
+                    <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={`${classes["timeline-item-circle"]} ${classes["timeline-item-visible"]}`}/></div>
                     <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
                 </div>
-                <div className={classes["time-line"]}>&nbsp;</div>
+                <StyledTimeline $timelineColor={_primaryBgColor} className={classes["time-line"]}>&nbsp;</StyledTimeline >
             </div>
         </div>
   );

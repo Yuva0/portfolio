@@ -3,17 +3,27 @@ import { faLocationPin, faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 import classes from './css/Education.module.css';
 import { Card, List, ListItem, Tag, Text, useTheme } from "stelios";
+import styled from "styled-components";
+
+const StyledItemCircle = styled.div`
+  background-color: ${props => props.$circleColor};
+`;
+
+const StyledTimeline = styled.div`
+  background-color: ${props => props.$timelineColor};
+`;
 
 const Education = () => {
     const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
+    const _primaryBgColor = useTheme().theme.colorPalette.primary.accentScale[8];
 
     return (
         <div>
         <Text color="primary" size="large">Education</Text>
         <div id="educational-timeline" className={classes.timeline}>
-            <div className={classes["time-line"]}>&nbsp;</div>
+            <StyledTimeline $timelineColor={_primaryBgColor} className={classes["time-line"]}>&nbsp;</StyledTimeline >
             <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]} ${classes["timeline-row-first"]}`}>
-                <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><div className={classes["timeline-item-circle"]}></div></div>
+                <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><StyledItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
                 <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                     <>
                     <Text preciseColor={_color}>B.Tech (Computer Science)</Text>
@@ -61,12 +71,12 @@ const Education = () => {
                     </List>
                     </>
                 </Card>
-                <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><div className={`${classes["timeline-item-circle"]} ${classes["timeline-item-visible"]}`}></div></div>
+                <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><StyledItemCircle $circleColor={_primaryBgColor} className={`${classes["timeline-item-circle"]} ${classes["timeline-item-visible"]}`}/></div>
                 <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
             </div>
             <div className={`${classes["timeline-row"]} ${classes["timeline-row-right"]}`}>
                 <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
-                <div className={classes["timeline-circle"]}><div className={classes["timeline-item-circle"]}></div></div>
+                <div className={classes["timeline-circle"]}><StyledItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
                 <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                     <>
                         <Text preciseColor={_color}>HSC (XI and XII)</Text>
@@ -88,7 +98,7 @@ const Education = () => {
                 </Card>
             </div>
             <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]} ${classes["timeline-row-bottom"]}`}>
-                <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><div className={classes["timeline-item-circle"]}></div></div>
+                <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><StyledItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
                 <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                     <>
                         <Text preciseColor={_color}>ICSE (X)</Text>
@@ -102,7 +112,7 @@ const Education = () => {
                         </List>
                     </>
                 </Card>
-                <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><div className={classes["timeline-item-circle"]}></div></div>
+                <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><StyledItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
                 <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
             </div>
         </div>
