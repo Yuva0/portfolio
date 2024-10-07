@@ -12,6 +12,14 @@ const StyledTimeline = styled.div`
 const StyledTimelineItemCircle = styled.div`
   background-color: ${props => props.$circleColor};
 `;
+const StyledCard = styled(Card)`
+  width: 45%;
+
+  @media (max-width: 1100px) {
+    width: 85%;
+  }
+`;
+
 
 const Experience = () => {
     const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
@@ -21,10 +29,10 @@ const Experience = () => {
         <div>
             <Text size="large" color="primary" className={`${classes.experienceTitle} title`}>Experience</Text>
             <div className={classes.timeline}>
-                <div className={`${classes["timeline-row"]} ${classes["timeline-row-right"]} ${classes["timeline-row-first"]}`}>
+                <div className={`${classes["timeline-row"]} ${classes["timeline-row-first"]}`}>
                     <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
-                    <div className={classes["timeline-circle"]}><div className={classes["timeline-item-circle"]}></div></div>
-                    <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
+                    <div className={classes["timeline-circle"]}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}></StyledTimelineItemCircle></div>
+                    <StyledCard  className={classes["timeline-item"]} style={{padding: "1.25rem", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                         <>
                         <Text preciseColor={_color}>Sr. Software Developer</Text>
                         <div className={classes["timeline-location"]}>
@@ -36,18 +44,18 @@ const Experience = () => {
                             <ListItem className={classes["timeline-description-item"]}><Text preciseColor={_color} size="small" variant="paragraph">Ensuring accessibility and optimizing performance of all designed components.</Text></ListItem>
                             <ListItem className={classes["timeline-description-item"]}><Text preciseColor={_color} size="small" variant="paragraph">Currently managing a library of 60+ components, all built entirely from scratch.</Text></ListItem> 
                         </List>
-                        <List variant="unordered" size="small" style={{padding: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", marginTop: "1rem"}} color="primary">
+                        <List variant="unordered" size="small" style={{padding: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", marginTop: "1rem", flexWrap: "wrap"}} color="primary">
                             <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Design System</Text></Tag></ListItem>
                             <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>React</Text></Tag></ListItem>
                             <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Jest</Text></Tag></ListItem>
                             <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Javascript</Text></Tag></ListItem>
                         </List>
                         </>
-                    </Card>
+                    </StyledCard>
                 </div>
-                <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]}`}>
+                <div className={`${classes["timeline-row"]}`}>
                     <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
-                    <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
+                    <StyledCard style={{padding: "1.25rem", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary" className={classes["timeline-item"]}>
                         <>
                             <Text preciseColor={_color}>Software Developer</Text>
                             <div className={classes["timeline-location"]}>
@@ -60,21 +68,21 @@ const Experience = () => {
                                 <ListItem className={classes["timeline-description-item"]}><Text preciseColor={_color} size="small" variant="paragraph">Constructed test cases to minimize unused code and remove dead code</Text></ListItem> 
                                 <ListItem className={classes["timeline-description-item"]}><Text preciseColor={_color} size="small" variant="paragraph">Won Rising Star Award in 2021</Text></ListItem> 
                             </List>
-                            <List variant="unordered" size="small" style={{padding: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", marginTop: "1rem"}} color="primary">
+                            <List variant="unordered" size="small" style={{padding: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", marginTop: "1rem", flexWrap: "wrap"}} color="primary">
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>OpenUI5</Text></Tag></ListItem>
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Javascript</Text></Tag></ListItem>
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>JMeter</Text></Tag></ListItem>
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Postman</Text></Tag></ListItem>
                             </List>
                         </>
-                    </Card>
+                    </StyledCard>
                     <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={`${classes["timeline-item-circle"]} ${classes["timeline-item-visible"]}`}/></div>
                     <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
                 </div>
-                <div className={`${classes["timeline-row"]} ${classes["timeline-row-right"]}`}>
+                <div className={`${classes["timeline-row"]}`}>
                     <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
                     <div className={classes["timeline-circle"]}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
-                    <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
+                    <StyledCard style={{padding: "1.25rem", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary" className={classes["timeline-item"]}>
                         <>
                             <Text preciseColor={_color}>Project Intern</Text>
                             <div className={classes["timeline-location"]}>
@@ -86,18 +94,18 @@ const Experience = () => {
                                 <ListItem className={classes["timeline-description-item"]}><Text preciseColor={_color} size="small" variant="paragraph">Used Eclipse IDE to work in Selenium</Text></ListItem>
                                 <ListItem className={classes["timeline-description-item"]}><Text preciseColor={_color} size="small" variant="paragraph">Studied about Agile and Waterfall technology</Text></ListItem> 
                             </List>
-                            <List variant="unordered" size="small" style={{padding: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", marginTop: "1rem"}} color="primary">
+                            <List variant="unordered" size="small" style={{padding: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", marginTop: "1rem", flexWrap: "wrap"}} color="primary">
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Selenium</Text></Tag></ListItem>
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Agile</Text></Tag></ListItem>
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Waterfall</Text></Tag></ListItem>
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Eclipse</Text></Tag></ListItem>
                             </List>
                         </>
-                    </Card>
+                    </StyledCard>
                 </div>
-                <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]}`}>
+                <div className={`${classes["timeline-row"]}`}>
                     <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
-                    <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
+                    <StyledCard style={{padding: "1.25rem", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary" className={classes.timeline}>
                         <>
                             <Text preciseColor={_color}>Web Developer Intern</Text>
                             <div className={classes["timeline-location"]}>
@@ -109,14 +117,14 @@ const Experience = () => {
                                 <ListItem className={classes["timeline-description-item"]}><Text preciseColor={_color} size="small" variant="paragraph">Front-end was created using ASP.NET and Javascript</Text></ListItem>
                                 <ListItem className={classes["timeline-description-item"]}><Text preciseColor={_color} size="small" variant="paragraph">Back-end was developed using C#</Text></ListItem> 
                             </List>
-                            <List variant="unordered" size="small" style={{padding: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", marginTop: "1rem"}} color="primary">
+                            <List variant="unordered" size="small" style={{padding: 0, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", marginTop: "1rem", flexWrap: "wrap"}} color="primary">
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>ASP.NET</Text></Tag></ListItem>
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Javascript</Text></Tag></ListItem>
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Sharepoint</Text></Tag></ListItem>
                                 <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>SQL</Text></Tag></ListItem>
                             </List>
                         </>
-                    </Card>
+                    </StyledCard>
                     <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><StyledTimelineItemCircle $circleColor={_primaryBgColor} className={`${classes["timeline-item-circle"]} ${classes["timeline-item-visible"]}`}/></div>
                     <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
                 </div>

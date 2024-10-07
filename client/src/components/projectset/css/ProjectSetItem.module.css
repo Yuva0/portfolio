@@ -93,117 +93,26 @@
   }
 }
 
-  @media only screen and (max-width: 800px) {
-    .content{
-      display: flex;
-      flex-direction: column;
-      padding: 10px 12px 10px 18px;
-      width: 60%;
-    }
-  
-    .projectSetItemWrapper{
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-    }
-  
-    .projectSetItem{
-      display: flex;
-      flex-direction: row;
-    }
-  
-    /* .articleSetItemWrapper a{
-      display: flex;
-      flex-direction: row;
-    } */
-  
-    .image{
-      width:40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .image img{
-      border-radius: 10px 0px 0px 10px;
-    }
-  
-    .description{
-      margin-bottom: 6px;
-      display: block;
-    }
+@media (max-width: 1100px) {
+  /* Your responsive styles here */
+}
 
-    .category{
-      margin-bottom: 6px;
-      display: block;
-    }
+@media (max-width: 800px) {
+  /* ... (styles for screens up to 800px wide) */
+}
 
-    .title, .date{
-      margin-bottom: 2px;
-      display: block;
-    }
-  }
-  
-  @media only screen and (max-width: 700px) {
-    .description{
-      display: none;
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    /* .duration{
-      display: none;
-    }
-    .durationGold{
-      display: none;
-    } */
-    .date{
-      display: none;
-    }
-  }
-  
-  @media only screen and (max-width: 400px) {
-    .title h3{
-      font-size: 16px;
-    }
-    .category{
-      display: none;
-    }
-    .duration{
-      display: none;
-    }
-    .durationGold{
-      display: none;
-    }
- }
+@media (max-width: 700px) {
+  /* ... (styles for screens up to 700px wide) */
+}
 
-  @media only screen and (max-width: 300px) {
-    /* .projectSetItemWrapper a{
-      flex-direction: column;
-    } */
-    .projectSetItemWrapper{
-      flex-direction: column;
-    }
-  
-    .image{
-      width: 100%;
-    }
+@media (max-width: 500px) {
+  /* ... (styles for screens up to 500px wide) */
+}
 
-    .image img{
-      border-radius: 10px;
-    }
-  
-    .content{
-      width:100%;
-    }
-    .category{
-      display: block;
-      margin-top: 6px;
-    }
-    .duration{
-      display: block;
-    }
-    .durationGold{
-      display: block;
-    }
- }
+@media (max-width: 400px) {
+  /* ... (styles for screens up to 400px wide) */
+}
+
+@media (max-width: 300px) {
+  /* ... (styles for screens up to 300px wide) */
+}

@@ -26,10 +26,11 @@ const Intropage = () => {
             alignItems: "center",
             gap: "0.75rem",
             width: "100%",
+            flexWrap: "wrap"
         }}
         >
         <>
-            <div style={{ flex: "1 1 70%", padding: "1rem 0" }}>
+            <div style={{ flex: "1 1 65%", padding: "1rem 0" }}>
             <Text
                 variant="paragraph"
                 color="primary"
@@ -50,7 +51,7 @@ const Intropage = () => {
                 applications, with an emphasis on high-quality, thoroughly tested
                 code.
             </Text>
-            <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem", gap: "4rem"}}>
+            <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem", columnGap: "2rem", rowGap: "rem", flexWrap: "wrap"}}>
                 <Button variant="neumorph" color="primary" onClick={() => {setShowResume(true)}} style={{backgroundColor: _primaryBgColor, color: _primaryColor , border:0}}>View Resume</Button>
                 <Button variant="neumorph" color="primary" onClick={() => {window.open("https://www.linkedin.com/in/tanuj-sengupta-872a05129/")}}>LinkedIn Profile</Button>
             </div>
@@ -75,7 +76,7 @@ const Intropage = () => {
                 color="primary"
                 size="large"
                 fontFamily='"Alegreya", serif;'
-                style={{ marginTop: "1rem" }}
+                style={{ marginTop: "1rem", textAlign: "center" }}
             >
                 Tanuj Sengupta
             </Text>

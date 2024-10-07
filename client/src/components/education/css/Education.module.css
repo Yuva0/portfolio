@@ -32,7 +32,7 @@
 
 .timeline-item{
   border-radius: 10px;
-  width: 45%;
+  width: 45% !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,6 +87,18 @@
   margin-right:21px;
 }
 
+/* .timeline-skills li{
+  flex:1;
+  text-align: center;
+  background-color: var(--backgroundColorTheme);
+  padding-left:8px;
+  padding-right: 8px;
+  padding-top:1px;
+  padding-bottom: 1px;
+  margin-top:8px;
+  margin-left: 8px;
+} */
+
 .timeline-skills-item{
   flex:1;
   text-align: center;
@@ -126,12 +138,20 @@
 }
 
 .time-line{
+  position: absolute;
+  left:50%;
+  /* background-color: var(--mainTheme); */
+  height: 100%;
+}
+
+.time-line{
     position: absolute;
     left:50%;
+    /* background-color: var(--mainTheme); */
     height: 100%;
 }
 
-@media (max-device-width:1200px){ /*Very Large Size -> when there are no changes in height but width reduces*/
+@media (max-width:1200px){ /*Very Large Size -> when there are no changes in height but width reduces*/
   /*Only decrease icon size since height is same*/
   :root{
       --skill-icon_size:120px;
@@ -148,7 +168,7 @@
 }
 
 /* Width: 1100px */
-@media (max-device-width:1100px){/*Large Height, Large Width -> width has grown smaller*/
+@media (max-width:1100px){/*Large Height, Large Width -> width has grown smaller*/
   .timeline-item-invisible{
       display: flex!important;
   }
@@ -176,7 +196,7 @@
 }
 
 /* Width: 950px */
-@media (max-device-width:950px){/*Large Height, Mediocre Width -> width has grown smaller*/
+@media (max-width:950px){/*Large Height, Mediocre Width -> width has grown smaller*/
   .timeline-item-circle{
       width:40px;
       height:40px;
@@ -184,7 +204,7 @@
 }
 
 /* Width: 650px */
-@media (max-device-width:650px) and (max-device-height:1000px){/*Large Height, Very Extreme Mini Width -> Width is extremely small*/
+@media (max-width:650px) and (max-height:1000px){/*Large Height, Very Extreme Mini Width -> Width is extremely small*/
   .timeline-item-circle{
       width: 30px;
       height: 30px;;

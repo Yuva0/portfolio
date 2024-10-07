@@ -8,9 +8,15 @@ import styled from "styled-components";
 const StyledItemCircle = styled.div`
   background-color: ${props => props.$circleColor};
 `;
-
 const StyledTimeline = styled.div`
   background-color: ${props => props.$timelineColor};
+`;
+const StyledCard = styled(Card)`
+  width: 45%;
+
+  @media (max-width: 1100px) {
+    width: 85%;
+  }
 `;
 
 const Education = () => {
@@ -22,9 +28,9 @@ const Education = () => {
         <Text color="primary" size="large">Education</Text>
         <div id="educational-timeline" className={classes.timeline}>
             <StyledTimeline $timelineColor={_primaryBgColor} className={classes["time-line"]}>&nbsp;</StyledTimeline >
-            <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]} ${classes["timeline-row-first"]}`}>
+            <div className={`${classes["timeline-row"]} ${classes["timeline-row-first"]}`}>
                 <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><StyledItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
-                <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
+                <StyledCard style={{padding: "1.25rem", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                     <>
                     <Text preciseColor={_color}>B.Tech (Computer Science)</Text>
                     <div className={classes["timeline-location"]}>
@@ -70,14 +76,14 @@ const Education = () => {
                         <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>Deep Learning</Text></Tag></ListItem>
                     </List>
                     </>
-                </Card>
+                </StyledCard>
                 <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><StyledItemCircle $circleColor={_primaryBgColor} className={`${classes["timeline-item-circle"]} ${classes["timeline-item-visible"]}`}/></div>
                 <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
             </div>
-            <div className={`${classes["timeline-row"]} ${classes["timeline-row-right"]}`}>
+            <div className={`${classes["timeline-row"]}`}>
                 <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
                 <div className={classes["timeline-circle"]}><StyledItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
-                <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
+                <StyledCard style={{padding: "1.25rem", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                     <>
                         <Text preciseColor={_color}>HSC (XI and XII)</Text>
                         <div className={classes["timeline-location"]}>
@@ -95,11 +101,11 @@ const Education = () => {
                             <ListItem><Tag variant="outlined" color="black"><Text fontSize='0.875rem' size="small" preciseColor={_color}>CSS</Text></Tag></ListItem>
                         </List>
                     </>
-                </Card>
+                </StyledCard>
             </div>
-            <div className={`${classes["timeline-row"]} ${classes["timeline-row-left"]} ${classes["timeline-row-bottom"]}`}>
+            <div className={`${classes["timeline-row"]}`}>
                 <div className={`${classes["timeline-circle"]} ${classes["timeline-item-invisible"]}`}><StyledItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
-                <Card style={{padding: "1.25rem", width: "45%", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
+                <StyledCard style={{padding: "1.25rem", display: "flex", alignItems:"stretch"}} variant="neumorph" color="primary">
                     <>
                         <Text preciseColor={_color}>ICSE (X)</Text>
                         <div className={classes["timeline-location"]}>
@@ -111,7 +117,7 @@ const Education = () => {
                             <ListItem><Text size="small" preciseColor={_color}>Scored 100 out of 100 in Computer Applications</Text></ListItem>
                         </List>
                     </>
-                </Card>
+                </StyledCard>
                 <div className={`${classes["timeline-circle"]} ${classes["timeline-item-visible"]}`}><StyledItemCircle $circleColor={_primaryBgColor} className={classes["timeline-item-circle"]}/></div>
                 <div className={`${classes["timeline-blank"]} ${classes["timeline-item-visible"]}`}></div>
             </div>
