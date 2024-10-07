@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
 import classes from './css/ProjectHeader.module.css';
 import fetchDate from '../../util/fetchDate';
+import { Text, useTheme } from 'stelios';
 
 const ProjectHeader = (props) => {
-
   let categories;
+  const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
   if(props.category){
     categories = props.category.map((category,index) => {
       return (<span key={index}>
@@ -40,7 +41,7 @@ const ProjectHeader = (props) => {
 
   let videoOrImage;
   if(props.videoUrl && props.videoUrl!== undefined){ //Video
-    videoOrImage = <div className={classes.videoWrapper}><iframe src={props.videoUrl} className={classes.iframeVideo} allowFullScreen></iframe></div>
+    videoOrImage = <div className={classes.videoWrapper} style={{marginTop: "1rem"}}><iframe src={props.videoUrl} title="Video" className={classes.iframeVideo} allowFullScreen></iframe></div>
   }
   else{ //Image
     videoOrImage = <div className={classes.imageWithCaption}><div className={`${classes.image}`}><img src={props.coverImage} alt={props.imageAlt}/></div><div className={classes.imageCaption}><ReactMarkdown>{props.imageCaption}</ReactMarkdown></div></div>
@@ -48,13 +49,13 @@ const ProjectHeader = (props) => {
 
   return (
     <div className={classes.skillHeader}>
-      <div className={classes.navigation}><h5>{categories}</h5></div>
-      <div className={classes.name}><h1>{props.title}</h1></div>
-      <div className={classes.headerContent}>
+      <Text preciseColor={_color} className={classes.navigation}>{categories}</Text>
+      <Text variant="h2" preciseColor={_color} className={classes.name} style={{marginTop: "1rem"}}>{props.title}</Text>
+      <Text preciseColor={_color} className={classes.headerContent} style={{marginTop: "1rem"}}>
         {authors}
         {difficulty}
         {date}
-      </div>
+      </Text>
       {videoOrImage}
     </div>
   );

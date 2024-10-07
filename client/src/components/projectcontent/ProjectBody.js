@@ -1,9 +1,11 @@
 import ReactMarkdown from 'react-markdown'
 import classes from './css/ProjectBody.module.css';
+import { useTheme } from 'stelios';
 
 const ProjectBody = (props) => {
+  const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
   return (
-    <div className={classes.skillBody}>
+    <div className={classes.skillBody} style={{color: _color}}>
         <ReactMarkdown>{props.content}</ReactMarkdown>
       
     </div>
