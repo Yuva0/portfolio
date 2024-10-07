@@ -1,14 +1,22 @@
 import ReactMarkdown from 'react-markdown'
 import classes from './css/CertificateBody.module.css';
 import { useTheme } from 'stelios';
+import { styled } from 'styled-components';
+
+const StyledCertificateBody = styled.div`
+  & a {
+    color: ${props => props.$linkColor};
+  }
+`;
 
 const CertificateBody = (props) => {
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
+  const _primaryColor = useTheme().theme.colorPalette.primary.accentScale[10];
   return (
-    <div className={classes.skillBody} style={{color: _color}}>
+    <StyledCertificateBody className={classes.skillBody} style={{color: _color}} $linkColor={_primaryColor}>
         <ReactMarkdown>{props.content}</ReactMarkdown>
       
-    </div>
+    </StyledCertificateBody>
     // Note if you need a new line - Add a newline and then &nbsp; (and two spaces)
     // 
     // &nbsp;  

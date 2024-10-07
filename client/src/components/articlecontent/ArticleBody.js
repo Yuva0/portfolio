@@ -1,11 +1,13 @@
 import ReactMarkdown from 'react-markdown'
 import classes from './css/ArticleBody.module.css';
+import { useTheme } from 'stelios';
 
 const ArticleBody = (props) => {
+  const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
 
 
   return (
-    <div className={classes.articleBody}>
+    <div className={classes.articleBody} style={{color: _color}}>
         <ReactMarkdown>{props.content}</ReactMarkdown>
       
     </div>

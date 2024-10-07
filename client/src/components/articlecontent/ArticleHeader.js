@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
 import fetchDate from '../../util/fetchDate';
 import classes from './css/ArticleHeader.module.css';
-import { Fragment } from 'react';
+import { Text, useTheme } from 'stelios';
 
 const ArticleHeader = (props) => {
+  const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
 
   let categories;
   if(props.category){
@@ -41,7 +41,7 @@ const ArticleHeader = (props) => {
 
   let videoOrImage,imageToHalf=true;
   if(props.videoUrl && props.videoUrl!== undefined){ //Video
-    videoOrImage = <div className={classes.videoWrapper}><iframe src={props.videoUrl} className={classes.iframeVideo} allowFullScreen></iframe></div>
+    videoOrImage = <div className={classes.videoWrapper}><iframe title="Video" src={props.videoUrl} className={classes.iframeVideo} allowFullScreen></iframe></div>
   }
   else{ //Image
     if(window.innerWidth < 1000){
@@ -56,13 +56,13 @@ const ArticleHeader = (props) => {
 
   return (
     <div className={classes.articleHeader}>
-      <div className={classes.navigation}><h5>{categories}</h5></div>
-      <div className={classes.title}><h1>{props.title}</h1></div>
-      <div className={classes.headerContent}>
+      <Text variant="span" color="black">{categories}</Text>
+      <Text preciseColor={_color} variant="h1" style={{marginTop: "1rem"}}>{props.title}</Text>
+      <Text preciseColor={_color} variant="span" style={{marginTop: "1rem", display: "flex", flexDirection: "row", justifyContent: "space-between", marginBottom: "1rem"}}>
         {authors}
         {difficulty}
         {date}
-      </div>
+      </Text>
       {videoOrImage}
     </div>
   );

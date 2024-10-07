@@ -22,6 +22,7 @@
     "react-scripts": "5.0.1",
     "react-spinning-wheel": "^2.1.0",
     "stelios": "^1.0.58",
+    "styled-components": "^6.1.13",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

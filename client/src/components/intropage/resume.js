@@ -27,6 +27,7 @@ const ModalOverlay = (props) => {
 
 const Resume = (props) => {
     const [theme, setTheme] = React.useState("vscode");
+    const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
 
     const handleDownloadResume = (theme) => {
         if (theme === "default") {
@@ -44,7 +45,7 @@ const Resume = (props) => {
             <ModalOverlay>
                 <div className={classes.closeModal} style={{display: "flex", justifyContent: "space-between", width: "100%"}}>
                     <Text color="primary" size="large">Resume</Text>
-                    <span><IconX onClick={props.onClose}/></span>
+                    <span><IconX color={_color} onClick={props.onClose}/></span>
                 </div>
                 <ToggleButtonGroup color="primary" value={theme} width='100%' style={{marginTop: "1.5rem"}} onClick={(e, value) => setTheme(value)}>
                     <ToggleButton value="vscode"><Text disableColor color="primary">VS Code</Text></ToggleButton>

@@ -7,6 +7,7 @@ import ArticleHeader from '../../articlecontent/ArticleHeader';
 import ArticleBody from '../../articlecontent/ArticleBody';
 import getAxiosRequest from '../../../util/getAxiosRequest';
 import LikeButton from '../../ui/likebutton/LikeButton';
+import { Text } from 'stelios';
 
 const ArticlePage = (props) => {
   const [post, setPost] = useState([{title:"",content:"",date:"",authors:[]}]);
@@ -35,7 +36,7 @@ const ArticlePage = (props) => {
         <ArticleHeader title = {post[0].title} date={post[0].buildDate} authors={post[0].authors} category={post[0].category} coverImage={post[0].coverImage} difficultyType = {post[0].difficultyType} imageCaption = {post[0].imageCaption} imageAlt={post[0].imageAlt} videoUrl={post[0].videoUrl}/>
         <ArticleBody content = {post[0].content}/>
         <div className={classes.interactionEvents}>
-          <div className={classes.interactionEventsTitle}><h4>Loved it? Show it!</h4></div>
+          <Text color="black" className={classes.interactionEventsTitle}>Loved it? Show it!</Text>
           <div className={classes.interactionEventsContent}>
             <span className={classes.likeButton}><LikeButton contentType={props.type} likes_count = {post[0].likes_count} _id={post[0]._id}/></span>
           </div>
