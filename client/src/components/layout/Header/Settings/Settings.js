@@ -53,49 +53,49 @@ const Settings = () => {
     return (
         <>
         <IconButton color="primary" size="small" variant="neumorph" icon={<IconSettings />} alt="Settings" onClick={() => setDrawerOpen(true)}/>
-        <Drawer size="small" color="primary" open={drawerOpen} onClose={() => setDrawerOpen(false)} hasCloseIcon title="Settings" position="right">
-        <StyledDrawerChildren>
-          {mobile && (
-            <div>
+        <Drawer size="small" color="primary" open={drawerOpen} onClose={() => setDrawerOpen(false)} hasCloseIcon title={<Text size="large" color="primary">Settings</Text>} position="right">
+          <StyledDrawerChildren>
+            {mobile && (
               <div>
-                <Text color="primary">Useful Links -</Text>
+                <div>
+                  <Text color="primary">Useful Links -</Text>
+                </div>
+                <div style={{ margin: "0.5rem 0", display: "flex", gap: "1rem" }}>
+                  <IconButton
+                    color="primary"
+                    size="small"
+                    variant="soft"
+                    alt="github"
+                    icon={<IconBrandGithub />}
+                    onClick={() =>
+                      window.open("https://yuva0.github.io/stelios/storybook")
+                    }
+                  />
+                  <IconButton
+                    size="small"
+                    variant="soft"
+                    color="primary"
+                    alt="storybook"
+                    icon={<IconBrandStorybook />}
+                    onClick={() =>
+                      window.open("https://yuva0.github.io/")
+                    }
+                  />
+                  <IconButton
+                    size="small"
+                    variant="soft"
+                    color="primary"
+                    alt="linkedin"
+                    icon={<IconBrandLinkedin />}
+                    onClick={() =>
+                      window.open(
+                        "https://www.linkedin.com/in/tanuj-sengupta-872a05129/"
+                      )
+                    }
+                  />
+                </div>
               </div>
-              <div style={{ margin: "0.5rem 0", display: "flex", gap: "1rem" }}>
-                <IconButton
-                  color="primary"
-                  size="small"
-                  variant="soft"
-                  alt="github"
-                  icon={<IconBrandGithub />}
-                  onClick={() =>
-                    window.open("https://yuva0.github.io/stelios/storybook")
-                  }
-                />
-                <IconButton
-                  size="small"
-                  variant="soft"
-                  color="primary"
-                  alt="storybook"
-                  icon={<IconBrandStorybook />}
-                  onClick={() =>
-                    window.open("https://yuva0.github.io/")
-                  }
-                />
-                <IconButton
-                  size="small"
-                  variant="soft"
-                  color="primary"
-                  alt="linkedin"
-                  icon={<IconBrandLinkedin />}
-                  onClick={() =>
-                    window.open(
-                      "https://www.linkedin.com/in/tanuj-sengupta-872a05129/"
-                    )
-                  }
-                />
-              </div>
-            </div>
-          )}
+            )}
 
           <StyledDrawerChildrenItem>
             <div style={{ marginTop: "1rem" }}>

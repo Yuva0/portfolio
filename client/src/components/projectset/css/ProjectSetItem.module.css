@@ -22,47 +22,12 @@
   z-index: -1;
 }
 
-.ribbon{
-  position: absolute;
-  z-index: 2;
-  width:90px;
-  max-width: 40%;
-  height:26px;
-  left:0;
-  top:20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.ribbon::before{
-  content:"";
-  position: absolute;
-  left:100%;
-  top:0;
-  width:0;
-  height:0;
-  border-right:13px solid transparent
-}
-
-.ribbon::after{
-  content:"";
-  position: absolute;
-  left:100%;
-  top:50%;
-  width:0;
-  height:0;
-  border-right: 13px solid transparent;
-}
-
 .content{
   padding:8px 24px 16px 20px;
 }
 
 .title{
   margin-bottom: 4px;
-  font-family: var(--titleFont);
 }
 
 .date{
@@ -76,7 +41,6 @@
 
 .description{
   margin-bottom: 6px;
-  font-family: var(--descriptionFont);
 }
 
 .projectSetItem {
@@ -90,6 +54,9 @@
   }
   .category{
     margin-bottom: 8px;
+  }
+  .projectSetItemWrapper{
+    width: 100% !important;
   }
 }
 

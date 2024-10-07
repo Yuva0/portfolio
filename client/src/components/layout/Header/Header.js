@@ -12,16 +12,23 @@ import {
   useUpdateTheme,
 } from "stelios";
 import colorTokens from "../../../tokens/color/color-tokens.json";
-import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
+import { NavLink, Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import {
   IconCaretDown,
   IconSun,
-  IconMoon
+  IconMoon,
+  IconBrandGithub
 } from "@tabler/icons-react";
 import Settings from "./Settings/Settings";
+import logo from '../../../assets/images/logo.png';
+import name from '../../../assets/images/name.png';
+import { useWindowSize } from "../../../hooks/use-windowsize";
+import Navigation from "./Navigation/Navigation";
 
 const Header = (props) => {
   const colorPalette = useTheme().theme.colorPalette;
+  const windowSize = useWindowSize();
+  const isMobile = windowSize.width < 768;
   const _background =
     colorPalette.primary.appearance === "dark" ? "#202124" : "white";
   const categoryRef = useRef(null);
@@ -54,59 +61,65 @@ const Header = (props) => {
       }}
       expandable={false}
     >
-      <HeaderGroup></HeaderGroup>
+      <HeaderGroup style={{marginLeft: "1rem"}}>
+        {isMobile && <Navigation/>}
+        <HeaderItem style={{marginLeft: "1rem"}}><NavLink to="/"><img src={logo} alt="logo" style={{height: "3rem", width: "3rem"}}/></NavLink></HeaderItem>
+        {!isMobile && <HeaderItem><NavLink to="/"><img src={name} alt="name" style={{height: "3rem", width: "10rem"}}/></NavLink></HeaderItem>}
+      </HeaderGroup>
       <HeaderGroup></HeaderGroup>
       <HeaderGroup style={{ marginRight: "2rem", gap: "1rem" }}>
-        <HeaderItem>
-          <Link color="primary" onClick={() => navigate("/")}>Home</Link>
-        </HeaderItem>
-        <HeaderItem>
-          <Link
-            color="primary"
-            ref={categoryRef}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "0.25rem",
-            }}
-            
-            onClick={() => setOpen(!open)}
-          >
-            <Text disableColor>Category</Text>
-            <IconCaretDown size="1rem" />
-          </Link>
-          <Menu
-            variant="neumorph"
-            open={open}
-            anchorElement={categoryRef.current}
-            color="primary"
-            style={{
-              backgroundColor: _background,
-              boxShadow: "0 6px 6px rgba(0, 0, 0, .1)",
-            }}
-            popperStyles={{
-              placement: "bottom",
-              modifiers: [
-                {
-                  name: "offset",
-                  options: {
-                    offset: [0, 16],
+        {!isMobile && <>
+          <HeaderItem>
+            <Link color="primary" onClick={() => navigate("/")}>Home</Link>
+          </HeaderItem>
+          <HeaderItem>
+            <Link
+              color="primary"
+              ref={categoryRef}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "0.25rem",
+              }}
+              
+              onClick={() => setOpen(!open)}
+            >
+              <Text disableColor>Category</Text>
+              <IconCaretDown size="1rem" />
+            </Link>
+            <Menu
+              variant="neumorph"
+              open={open}
+              anchorElement={categoryRef.current}
+              color="primary"
+              style={{
+                backgroundColor: _background,
+                boxShadow: "0 6px 6px rgba(0, 0, 0, .1)",
+              }}
+              popperStyles={{
+                placement: "bottom",
+                modifiers: [
+                  {
+                    name: "offset",
+                    options: {
+                      offset: [0, 16],
+                    },
                   },
-                },
-              ],
-            }}
-          >
-            <MenuItem><ReactRouterLink to="/projects"><Text color="primary">Projects</Text></ReactRouterLink></MenuItem>
-            <MenuItem><ReactRouterLink to="/certificates"><Text color="primary">Certificates</Text></ReactRouterLink></MenuItem>
-            <MenuItem><ReactRouterLink to="/skills"><Text color="primary">Skills</Text></ReactRouterLink></MenuItem>
-            {/* <MenuItem><ReactRouterLink to="/projects"><Text color="primary">Cards</Text></ReactRouterLink></MenuItem> */}
-          </Menu>
-        </HeaderItem>
-        <HeaderItem>
-          <Link  color="primary" onClick={() => navigate("/blogs")}>Blog</Link>
-        </HeaderItem>
+                ],
+              }}
+            >
+              <MenuItem><ReactRouterLink to="/projects"><Text color="primary">Projects</Text></ReactRouterLink></MenuItem>
+              <MenuItem><ReactRouterLink to="/certificates"><Text color="primary">Certificates</Text></ReactRouterLink></MenuItem>
+              <MenuItem><ReactRouterLink to="/skills"><Text color="primary">Skills</Text></ReactRouterLink></MenuItem>
+              {/* <MenuItem><ReactRouterLink to="/projects"><Text color="primary">Cards</Text></ReactRouterLink></MenuItem> */}
+            </Menu>
+          </HeaderItem>
+          <HeaderItem style={{marginRight: "2rem"}}>
+            <Link  color="primary" onClick={() => navigate("/blogs")}>Blog</Link>
+          </HeaderItem>
+        </>}
         <HeaderItem>
           <IconButton
             color="primary"
@@ -115,6 +128,16 @@ const Header = (props) => {
             size="small"
             variant="neumorph"
             onClick={_toggleTheme}
+          />
+        </HeaderItem>
+        <HeaderItem>
+          <IconButton
+            color="primary"
+            icon={<IconBrandGithub/>}
+            alt="Sun Theme"
+            size="small"
+            variant="neumorph"
+            onClick={() => window.open("https://github.com/yuva0")}
           />
         </HeaderItem>
         <HeaderItem>

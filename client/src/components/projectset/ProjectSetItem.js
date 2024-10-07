@@ -5,11 +5,24 @@ import classes from './css/ProjectSetItem.module.css';
 import ProjectModal from '../modals/ProjectModal';
 import { Fragment } from 'react';
 import { Card, Text, useTheme } from 'stelios';
+import styled from 'styled-components';
 
+const StyledRibbon = styled(Text)`
+  background-color: ${props => props.primaryBgColor};
+
+  &::before{
+    background-color: ${props => props.primaryBgColor};
+  }
+
+  &::after{
+    background-color: ${props => props._rimaryBgColor};
+  }
+`;
 
 const ProjectSetItem = (props) => {
   const [projectModalActive, setProjectModalActive] = useState(false);
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
+  const _primaryBgColor = useTheme().theme.colorPalette.primary.accentScale[8];
 
   const projectClickHandler = () => {
     setProjectModalActive(() => true);
@@ -33,10 +46,8 @@ const ProjectSetItem = (props) => {
     category = <Text size="small" color="black" style={{marginTop: "0.25rem"}} className={classes.category}>{categoryVal}</Text>
   }
 
-  let ribbon;
   let difficulty;
   if (props.difficultyType === 3){
-    ribbon = <Text preciseColor={_color} variant="span" size="small" className={classes.ribbon}>Difficult</Text>
     difficulty = <Text color="primary" style={{marginTop: "0.5rem"}}>Difficult</Text>
   }
   else if (props.difficultyType === 2){
@@ -47,7 +58,7 @@ const ProjectSetItem = (props) => {
   }
   let coverImage;
   if(props.coverImage){
-    coverImage = <div className={classes.image}><img src={props.coverImage} alt={props.imageAlt} />{ribbon}</div>
+    coverImage = <div className={classes.image}><img src={props.coverImage} alt={props.imageAlt} /></div>
   }
 
   return (
