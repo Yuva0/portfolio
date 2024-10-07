@@ -65,12 +65,12 @@ const SkillModal = (props) => {
         content = <Fragment>
                     <SkillHeader title={skill[0].title} coverImage={skill[0].coverImage} imageCaption = {skill[0].imageCaption} imageAlt={skill[0].imageAlt} category={skill[0].category}/>
                     <SkillBody content={skill[0].content}/>
-                    <div className={classes.interactionEvents}>
+                    {/* <div className={classes.interactionEvents}>
                         <Text size="small" color="black" className={classes.interactionEventsTitle}>Loved it? Show it!</Text>
                         <div className={classes.interactionEventsContent}>
                             <span className={classes.likeButton}><LikeButton contentType="skills" likes_count = {skill[0].likes_count} _id={skill[0]._id}/></span>
                         </div>
-                    </div>
+                    </div> */}
                 </Fragment>;
     }
     return (

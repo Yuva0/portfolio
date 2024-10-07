@@ -117,7 +117,7 @@ const Header = (props) => {
             onClick={_toggleTheme}
           />
         </HeaderItem>
-        <HeaderItem>
+        {/* <HeaderItem>
           <IconButton
             color="primary"
             icon={<IconSettings />}
@@ -125,7 +125,7 @@ const Header = (props) => {
             size="small"
             variant="neumorph"
           />
-        </HeaderItem>
+        </HeaderItem> */}
       </HeaderGroup>
     </HeaderUI>
   );

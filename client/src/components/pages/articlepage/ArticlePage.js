@@ -35,12 +35,12 @@ const ArticlePage = (props) => {
       <div className={classes.articlepage}>
         <ArticleHeader title = {post[0].title} date={post[0].buildDate} authors={post[0].authors} category={post[0].category} coverImage={post[0].coverImage} difficultyType = {post[0].difficultyType} imageCaption = {post[0].imageCaption} imageAlt={post[0].imageAlt} videoUrl={post[0].videoUrl}/>
         <ArticleBody content = {post[0].content}/>
-        <div className={classes.interactionEvents}>
+        {/* <div className={classes.interactionEvents}>
           <Text color="black" className={classes.interactionEventsTitle}>Loved it? Show it!</Text>
           <div className={classes.interactionEventsContent}>
             <span className={classes.likeButton}><LikeButton contentType={props.type} likes_count = {post[0].likes_count} _id={post[0]._id}/></span>
           </div>
-        </div>
+        </div> */}
         
       </div>
     );

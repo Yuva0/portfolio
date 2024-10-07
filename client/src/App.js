@@ -6,7 +6,7 @@ import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 
 import classes from "./App.module.css";
-import CookieOverlay from "./components/overlays/Cookies/CookieOverlay";
+// import CookieOverlay from "./components/overlays/Cookies/CookieOverlay";
 import ArticlePage from "./components/pages/articlepage/ArticlePage";
 import ProjectsPage from "./components/pages/projectspage/ProjectsPage";
 import CertificatesPage from "./components/pages/certificatespage/CertificatesPage";
@@ -68,7 +68,7 @@ function App() {
         <Header />
         <AppContent />
         <Footer />
-        <CookieOverlay />
+        {/* <CookieOverlay /> */}
       </ThemeProvider>
     </div>
   );
