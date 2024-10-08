@@ -5,24 +5,11 @@ import classes from './css/ProjectSetItem.module.css';
 import ProjectModal from '../modals/ProjectModal';
 import { Fragment } from 'react';
 import { Card, Text, useTheme } from 'stelios';
-import styled from 'styled-components';
 
-const StyledRibbon = styled(Text)`
-  background-color: ${props => props.primaryBgColor};
-
-  &::before{
-    background-color: ${props => props.primaryBgColor};
-  }
-
-  &::after{
-    background-color: ${props => props._rimaryBgColor};
-  }
-`;
 
 const ProjectSetItem = (props) => {
   const [projectModalActive, setProjectModalActive] = useState(false);
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
-  const _primaryBgColor = useTheme().theme.colorPalette.primary.accentScale[8];
 
   const projectClickHandler = () => {
     setProjectModalActive(() => true);

@@ -49,9 +49,9 @@
 }
   
 @media only screen and (max-width: 900px) {
-  .description{
+  /* .description{
     display: none;
-  }
+  } */
   .category{
     margin-bottom: 8px;
   }

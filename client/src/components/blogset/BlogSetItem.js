@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import fetchDate from '../../util/fetchDate';
 import firstLetterUpper from '../../util/firstLetterUpper';
 import classes from './css/BlogSetItem.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, Text, useTheme } from 'stelios';
 // import ProjectModal from '../modals/ProjectModal';
 // import { Fragment } from 'react';
@@ -11,6 +11,7 @@ import { Card, Text, useTheme } from 'stelios';
 const BlogSetItem = (props) => {
   const [day,month,year] = fetchDate(props.date);
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
+  const navigate = useNavigate();
 
   let category;
   if (props.category) {
@@ -20,6 +21,10 @@ const BlogSetItem = (props) => {
     }
     let categoryVal = categoryInner+firstLetterUpper(props.category[props.category.length-1]);
     category = <Text size="small" color="black" style={{marginTop: "0.25rem"}} className={classes.category}>{categoryVal}</Text>
+  }
+
+  const blogClickHandler = () => {
+    navigate(`/blog/${props.idTitle}`);
   }
 
   let ribbon;
@@ -40,9 +45,8 @@ const BlogSetItem = (props) => {
   }
 
   return (
-    <Card variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary" className={classes.blogSetItemWrapper}>
-      <>
-      <Link  to={{ pathname: `/blog/${props.idTitle}`, query: { title: props.title } }} style={{flex: "1 1 0"}}>
+    <Card clickable variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary" className={classes.blogSetItemWrapper} onClick={blogClickHandler}>
+      <div className={classes.blogSetItem}>
       {coverImage}
       <div className={classes.content}>
         <Text variant="paragraph" size="medium" preciseColor={_color} style={{marginTop: "0.5rem"}}>{props.title}</Text>
@@ -51,8 +55,7 @@ const BlogSetItem = (props) => {
         {difficulty}
         <Text size="small" preciseColor={_color} style={{marginTop: "0.5rem"}}>{day} {month} {year}</Text>
       </div>
-      </Link>
-      </>
+      </div>
     </Card>
     );
 };

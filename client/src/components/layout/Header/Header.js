@@ -12,7 +12,7 @@ import {
   useUpdateTheme,
 } from "stelios";
 import colorTokens from "../../../tokens/color/color-tokens.json";
-import { NavLink, Link as ReactRouterLink, useNavigate } from "react-router-dom";
+import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import {
   IconCaretDown,
   IconSun,
@@ -63,8 +63,7 @@ const Header = (props) => {
     >
       <HeaderGroup style={{marginLeft: "1rem"}}>
         {isMobile && <Navigation/>}
-        <HeaderItem style={{marginLeft: "1rem"}}><NavLink to="/"><img src={logo} alt="logo" style={{height: "3rem", width: "3rem"}}/></NavLink></HeaderItem>
-        {!isMobile && <HeaderItem><NavLink to="/"><img src={name} alt="name" style={{height: "3rem", width: "10rem"}}/></NavLink></HeaderItem>}
+        {!isMobile && <HeaderItem><ReactRouterLink style={{width: "100%", height: "100%"}} to="/"><Text variant="h2" color="primary">Tanuj Sengupta</Text></ReactRouterLink></HeaderItem>}
       </HeaderGroup>
       <HeaderGroup></HeaderGroup>
       <HeaderGroup style={{ marginRight: "2rem", gap: "1rem" }}>
