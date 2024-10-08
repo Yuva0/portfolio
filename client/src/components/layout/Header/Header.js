@@ -108,9 +108,9 @@ const Header = (props) => {
                 ],
               }}
             >
-              <MenuItem><Link to="/projects"><Text color="primary">Projects</Text></Link></MenuItem>
-              <MenuItem><Link to="/certificates"><Text color="primary">Certificates</Text></Link></MenuItem>
-              <MenuItem><Link to="/skills"><Text color="primary">Skills</Text></Link></MenuItem>
+              <MenuItem><Link href="/projects"><Text color="primary">Projects</Text></Link></MenuItem>
+              <MenuItem><Link href="/certificates"><Text color="primary">Certificates</Text></Link></MenuItem>
+              <MenuItem><Link href="/skills"><Text color="primary">Skills</Text></Link></MenuItem>
               {/* <MenuItem><ReactRouterLink to="/projects"><Text color="primary">Cards</Text></ReactRouterLink></MenuItem> */}
             </Menu>}
           </HeaderItem>
