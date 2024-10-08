@@ -4,12 +4,6 @@ import classes from './css/ArticleHeader.module.css';
 import { Text, useTheme } from 'stelios';
 import styled from 'styled-components';
 
-const StyledImageCaption = styled.div`
-  & a {
-    color: ${props => props.$linkColor};
-  }
-`;
-
 const ArticleHeader = (props) => {
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
   const theme = useTheme().theme;
@@ -57,7 +51,7 @@ const ArticleHeader = (props) => {
     else{
       imageToHalf = true;
     }
-    videoOrImage = <div className={classes.imageWithCaption}><div className={`${classes.image} ${imageToHalf && classes.imageToHalf}`}><img src={props.coverImage} alt={props.imageAlt}/></div><StyledImageCaption className={classes.imageCaption} $linkColor={_primaryColor}><ReactMarkdown>{props.imageCaption}</ReactMarkdown></StyledImageCaption></div>
+    videoOrImage = <div className={classes.imageWithCaption}><div className={`${classes.image} ${imageToHalf && classes.imageToHalf}`}><img src={props.coverImage} alt={props.imageAlt}/></div><Text className={classes.imageCaption} color="black"><ReactMarkdown>{props.imageCaption}</ReactMarkdown></Text></div>
     
   }
 

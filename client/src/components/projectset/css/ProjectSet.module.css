@@ -9,7 +9,7 @@
   .projectSetCollection{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     justify-content: flex-start;
     flex-wrap: wrap;
     column-gap: 48px;

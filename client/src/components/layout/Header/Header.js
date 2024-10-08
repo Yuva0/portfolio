@@ -28,6 +28,7 @@ import Navigation from "./Navigation/Navigation";
 const Header = (props) => {
   const colorPalette = useTheme().theme.colorPalette;
   const windowSize = useWindowSize();
+  const isLaptop = windowSize.width < 1200;
   const isMobile = windowSize.width < 768;
   const _background =
     colorPalette.primary.appearance === "dark" ? "#202124" : "white";
@@ -63,7 +64,7 @@ const Header = (props) => {
     >
       <HeaderGroup style={{marginLeft: "1rem"}}>
         {isMobile && <Navigation/>}
-        {!isMobile && <HeaderItem><ReactRouterLink style={{width: "100%", height: "100%"}} to="/"><Text variant="h2" color="primary">Tanuj Sengupta</Text></ReactRouterLink></HeaderItem>}
+        {!isMobile && <HeaderItem><ReactRouterLink style={{width: "100%", height: "100%"}} to="/"><Text style={{marginLeft: "2rem"}} variant={isLaptop ? "h3" : "h1"} color="primary" fontFamily="'Dosis', sans-serif;">Tanuj Sengupta</Text></ReactRouterLink></HeaderItem>}
       </HeaderGroup>
       <HeaderGroup></HeaderGroup>
       <HeaderGroup style={{ marginRight: "2rem", gap: "1rem" }}>

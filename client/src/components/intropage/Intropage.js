@@ -30,42 +30,42 @@ const Intropage = () => {
         }}
         >
         <>
+            <div
+                style={{
+                    flex: "1 1 30%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+                >
+                <Avatar
+                    size="xlarge"
+                    type="image"
+                    src={profileImage}
+                    alt="Profile Image"
+                />
+                <Text
+                    variant="h4"
+                    color="primary"
+                    size="large"
+                    fontFamily='"Alegreya", serif;'
+                    style={{ marginTop: "1rem", textAlign: "center" }}
+                >
+                    Tanuj Sengupta
+                </Text>
+                </div>
             <div style={{ flex: "1 1 65%", padding: "1rem 0" }}>
 
             <List color="primary" title={<Text color="primary" size="large">FrontEnd Developer</Text>} style={{gap: "0.25rem"}}>
                 <ListItem><Text preciseColor={_color} size="medium">Specialising in component design systems and accessibility.</Text></ListItem>
-                <ListItem><Text preciseColor={_color} size="medium" style={{marginTop: "0.5rem"}}>Created multiple websites with focus on accessibility and themability.</Text></ListItem>
-                <ListItem><Text preciseColor={_color} size="medium" style={{marginTop: "0.5rem"}}>Currently creating a themable design with over 100 components - <Link variant="underline" target="_blank" color="primary" href="https://steliosui.com/">www.steliosui.com</Link></Text></ListItem>
+                <ListItem><Text preciseColor={_color} size="medium" style={{marginTop: "0.5rem"}}>Created multiple websites with focus on functionality, performance and user experience.</Text></ListItem>
+                <ListItem><Text preciseColor={_color} size="medium" style={{marginTop: "0.5rem"}}>Currently creating a themable design system with over 100 components - <Link variant="underline" target="_blank" color="primary" href="https://steliosui.com/">www.steliosui.com</Link></Text></ListItem>
             </List>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem", columnGap: "2rem", rowGap: "1rem", flexWrap: "wrap"}}>
                 <Button variant="neumorph" color="primary" onClick={() => {setShowResume(true)}} style={{backgroundColor: _primaryBgColor, color: _primaryColor , border:0}}>View Resume</Button>
                 <Button variant="neumorph" color="primary" onClick={() => {window.open("https://www.linkedin.com/in/tanuj-sengupta-872a05129/")}}>LinkedIn Profile</Button>
             </div>
-            </div>
-            <div
-            style={{
-                flex: "1 1 30%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-            }}
-            >
-            <Avatar
-                size="xlarge"
-                type="image"
-                src={profileImage}
-                alt="Profile Image"
-            />
-            <Text
-                variant="h4"
-                color="primary"
-                size="large"
-                fontFamily='"Alegreya", serif;'
-                style={{ marginTop: "1rem", textAlign: "center" }}
-            >
-                Tanuj Sengupta
-            </Text>
             </div>
         </>
         </Card>

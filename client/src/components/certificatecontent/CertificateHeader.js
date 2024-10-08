@@ -2,10 +2,16 @@ import ReactMarkdown from 'react-markdown'
 import classes from './css/CertificateHeader.module.css';
 import fetchDate from '../../util/fetchDate';
 import { Text, useTheme } from 'stelios';
+import styled from 'styled-components';
+
+const StyledImageCaption = styled(Text)`
+  & a{
+    color: ${props => props.$linkColor};
+`;
 
 const CertificateHeader = (props) => {
   const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
-
+  const _primaryColor = useTheme().theme.colorPalette.primary.accentScale[10];
   let categories;
   if(props.category){
     categories = props.category.map((category,index) => {
@@ -38,7 +44,7 @@ const CertificateHeader = (props) => {
     videoOrImage = <div className={classes.videoWrapper} style={{marginTop: "1rem"}}><iframe title="Video" src={props.videoUrl} className={classes.iframeVideo} allowFullScreen></iframe></div>
   }
   else{ //Image
-    videoOrImage = <div className={classes.imageWithCaption} style={{marginTop: "1rem"}}><div className={`${classes.image}`}><img src={props.coverImage} alt={props.imageAlt}/></div><div className={classes.imageCaption}><ReactMarkdown>{props.imageCaption}</ReactMarkdown></div></div>
+    videoOrImage = <div className={classes.imageWithCaption} style={{marginTop: "1rem"}}><div className={`${classes.image}`}><img src={props.coverImage} alt={props.imageAlt}/></div><StyledImageCaption $linkColor={_primaryColor} color="black" className={classes.imageCaption}><ReactMarkdown>{props.imageCaption}</ReactMarkdown></StyledImageCaption></div>
   }
   return (
     <div className={classes.skillHeader}>

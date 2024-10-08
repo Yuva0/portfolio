@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <div className={classes.footer} style={{backgroundColor: _primaryBgColor}}>
             <div className={classes.footerContent}>
-                <Text variant="div" fontSize='2rem' preciseColor="white" style={{textAlign: "center", marginTop: "36px"}}>Thank you for visiting!</Text>
+                <Text variant="div" fontSize='2rem' preciseColor="white" style={{textAlign: "center", marginTop: "36px", lineHeight: "1.25"}}>Thank you for visiting!</Text>
                 <div className={classes.footerMenuComplete} style={{marginTop: "24px"}}>
                     <div className={classes.footerMenu}>
                         <div className={classes.footerMenuHeader}><Text variant="span" preciseColor='white'>Content</Text></div>

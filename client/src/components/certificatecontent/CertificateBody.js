@@ -4,6 +4,7 @@ import { useTheme } from 'stelios';
 import { styled } from 'styled-components';
 
 const StyledCertificateBody = styled.div`
+  font-family: 'Varela Round', sans-serif;
   & a {
     color: ${props => props.$linkColor};
   }

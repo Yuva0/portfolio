@@ -4,7 +4,7 @@ import { useTheme } from 'stelios';
 import styled from 'styled-components';
 
 const StyledArticleBody = styled.div`
-  font-family: 'Alegreya', serif;
+  font-family: 'Varela Round', sans-serif;
   & a {
     color: ${props => props.color};
   }
@@ -15,7 +15,7 @@ const ArticleBody = (props) => {
   const _primaryColor = useTheme().theme.colorPalette.primary.accentScale[10];
 
   return (
-    <StyledArticleBody className={classes.articleBody} style={{color: _color}} color={_primaryColor}>
+    <StyledArticleBody className={classes.articleBody} style={{color: _color, fontFamily: "'Varela Round', sans-serif", marginTop: "2rem"}} color={_primaryColor}>
         <ReactMarkdown>{props.content}</ReactMarkdown>
       
     </StyledArticleBody>

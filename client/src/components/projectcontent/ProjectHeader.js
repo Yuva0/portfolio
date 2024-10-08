@@ -44,7 +44,7 @@ const ProjectHeader = (props) => {
     videoOrImage = <div className={classes.videoWrapper} style={{marginTop: "1rem"}}><iframe src={props.videoUrl} title="Video" className={classes.iframeVideo} allowFullScreen></iframe></div>
   }
   else{ //Image
-    videoOrImage = <div className={classes.imageWithCaption}><div className={`${classes.image}`}><img src={props.coverImage} alt={props.imageAlt}/></div><div className={classes.imageCaption}><ReactMarkdown>{props.imageCaption}</ReactMarkdown></div></div>
+    videoOrImage = <div className={classes.imageWithCaption} style={{marginTop: "1rem"}}><div className={`${classes.image}`}><img src={props.coverImage} alt={props.imageAlt}/></div><Text color="black" className={classes.imageCaption}><ReactMarkdown>{props.imageCaption}</ReactMarkdown></Text></div>
   }
 
   return (

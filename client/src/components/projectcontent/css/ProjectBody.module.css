@@ -7,6 +7,11 @@
   margin:4px 0;
 }
 
+.skillBody p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 .skillBody li{
   list-style-type:disc;
   font-size: 18px;
