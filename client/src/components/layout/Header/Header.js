@@ -67,7 +67,7 @@ const Header = (props) => {
         {!isMobile && <HeaderItem><ReactRouterLink style={{width: "100%", height: "100%"}} to="/"><Text style={{marginLeft: "2rem"}} variant={isLaptop ? "h3" : "h1"} color="primary" fontFamily="'Dosis', sans-serif;">Tanuj Sengupta</Text></ReactRouterLink></HeaderItem>}
       </HeaderGroup>
       <HeaderGroup></HeaderGroup>
-      <HeaderGroup style={{ marginRight: "2rem", gap: "1rem" }}>
+      <HeaderGroup style={{ marginRight: isMobile ? "0.5rem" :"2rem", gap: "1rem" }}>
         {!isMobile && <>
           <HeaderItem>
             <Link color="primary" onClick={() => navigate("/")}>Home</Link>
