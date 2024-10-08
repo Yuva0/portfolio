@@ -29,12 +29,21 @@ const Resume = (props) => {
     const [theme, setTheme] = React.useState("vscode");
     const _color = useTheme().theme.colorPalette.primary.appearance === "light" ? "black" : "white";
 
-    const handleDownloadResume = (theme) => {
+    const handleDownloadResume = () => {
         if (theme === "default") {
             window.open("https://drive.google.com/uc?export=download&id=1NQFJvtImIGToxfv4jSGGBJtxyHHUtH0d");
         }
         else {
             window.open("https://drive.google.com/uc?export=download&id=1eNO7UYY3GoTw6PCwYZXm6Ze5OktcR76p");
+        }
+    }
+
+    const handleFullScreenResume = () => {
+        if (theme === "default") {
+            window.open("https://tanujsengupta.b-cdn.net/resume/default_resume.pdf");
+        }
+        else {
+            window.open("https://tanujsengupta.b-cdn.net/resume/vscode_resume.pdf");
         }
     }
 
@@ -54,7 +63,10 @@ const Resume = (props) => {
                 <div style={{width: "100%", marginTop: "1rem", borderRadius: "8px"}}>
                     <img style={{width: "100%", borderRadius: "8px"}} src={theme === "vscode" ? resume_vscode: resume_default} alt="resume"/>
                 </div>
-                <Button variant='neumorph' color='primary' style={{marginTop: "2rem", backgroundColor: colors.accent.primary, color: "white", border:0 }} onClick={handleDownloadResume}><Text disableColor>Download {theme==='vscode' ? "VS Code" : "Default"} Resume</Text></Button>
+                <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", gap: "1rem"}}>
+                    <Button variant='neumorph' color='primary' style={{marginTop: "2rem", backgroundColor: colors.accent.primary, color: "white", border:0 }} onClick={handleDownloadResume}><Text disableColor>Download</Text></Button>
+                    <Button variant='neumorph' color='primary' style={{marginTop: "2rem", border:0 }} onClick={handleFullScreenResume}><Text disableColor>View in new tab</Text></Button>
+                </div>
         </ModalOverlay>, portalElement)}
     </>
     )
