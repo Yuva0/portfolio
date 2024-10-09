@@ -3,5 +3,9 @@
     "primary": "#ee9b00",
     "black": "#000000"
   },
-  "appearance": "dark"
+  "appearance": "dark",
+  "background": {
+    "light": "white",
+    "dark": "#202124"
+  }
 }

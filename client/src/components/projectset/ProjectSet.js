@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
+import colors from "../../tokens/color/color-tokens.json"
 import classes from './css/ProjectSet.module.css';
 import ProjectSetItem from './ProjectSetItem.js';
 import getAxiosRequest from '../../util/getAxiosRequest';
-import { Text, Link, Select } from 'stelios';
+import { Text, Link, Select, useTheme } from 'stelios';
 import { IconArrowRight } from '@tabler/icons-react';
 
 const ProjectSet = (props) => {
@@ -13,6 +14,8 @@ const ProjectSet = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
   const navigate = useNavigate();
+  const colorPalette = useTheme().theme.colorPalette;
+  const appearance = colorPalette.appearance;
 
   useEffect(() => {
     let isMounted = true;
@@ -59,9 +62,10 @@ const ProjectSet = (props) => {
   return (
     <div>
       <Link variant="hover" color="primary" onClick={() => navigate("/projects")} style={{display: "flex", alignItems: "center", gap: "0.5rem"}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
-        <div style={{display: "flex", alignItems: "center", flexDirection: "row", flexWrap: "wrap", columnGap: "2rem", marginTop: "1rem"}}>
-          <Select placeholder='' size="small" color="black" variant="outlined" label="FrontEnd" options={[{title: "React", value: "react"}, {title: "Typescript", value: "typescript"}]}/>
-          <Select placeholder='' size="small" color="black" variant="outlined" label="BackEnd" options={[{title: "Node", value: "node"}, {title: "Express", value: "express"}]}/>
+        <Text color='black' size="large" style={{marginTop: "1rem"}}>Filters:</Text>
+        <div style={{display: "flex", alignItems: "center", flexDirection: "row", flexWrap: "wrap", columnGap: "2rem", marginTop: "0.25rem"}} >
+          <Select placeholder='' size="small" color="black" variant="outlined" label="FrontEnd" options={[{title: "React", value: "react"}, {title: "Typescript", value: "typescript"}]} menuProps={{style: {zIndex: 10000, backgroundColor: appearance === "light" ? "white" : "#202124" }}}/>
+          {/* <Select placeholder='' size="small" color="black" variant="outlined" label="BackEnd" options={[{title: "Node", value: "node"}, {title: "Express", value: "express"}]} menuProps={{style: {zIndex: 10000, backgroundColor: appearance === "light" ? "white" : "#202124" }}}/> */}
         </div>
         <div className={classes.projectSetCollection} style={{marginTop: "1rem"}}>
           {currentPageData}
