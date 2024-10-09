@@ -50,7 +50,7 @@ const ProjectSetItem = (props) => {
 
   return (
     <>
-    <Card clickable variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary" className={classes.projectSetItemWrapper} onClick={projectClickHandler}>
+    <Card animate="fade-in" clickable variant="neumorph" style={{padding: 0, border: 0, flexBasis: "30%"}} color="primary" className={classes.projectSetItemWrapper} onClick={projectClickHandler}>
         <div className={classes.projectSetItem}>
           {coverImage}
           <div className={classes.content}>

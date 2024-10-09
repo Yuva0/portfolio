@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
 import classes from './css/ProjectHeader.module.css';
 import fetchDate from '../../util/fetchDate';

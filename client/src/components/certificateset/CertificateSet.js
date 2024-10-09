@@ -54,7 +54,7 @@ const CertificateSet = (props) => {
 
   return (
     <div className={classes.certificateSetWrapper}>
-      <Link variant="hover" color="primary" onClick={() => navigate("/projects")} style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "0.5rem"}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
+      <Link variant="hover" color="primary" href="/certificates" style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "0.5rem"}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
       <div className={classes.certificateSetCollection} style={{marginTop: "1rem"}}>
         {currentPageData}
       </div>

@@ -46,7 +46,7 @@ const SkillSet = (props) => {
     return (
         <div className={classes.skillSetWrapper}> 
             <LineDiamondLine/>
-            <Link color="primary" size="large" className={classes.skillSetTitle} style={{marginTop: "1rem", justifyContent: "center", alignItems: "center", display: 'flex'}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
+            <Link href="/skills" color="primary" size="large" className={classes.skillSetTitle} style={{marginTop: "1rem", justifyContent: "center", alignItems: "center", display: 'flex'}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
             <div className={classes.skillSetItemWrapper} style={{marginTop: "2rem"}}>
                 {currentPageData}
             </div>

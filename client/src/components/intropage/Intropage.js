@@ -17,6 +17,7 @@ const Intropage = () => {
     return (
         <>
         <Card
+        animate="fade-in"
         variant="neumorph"
         color="primary"
         style={{
