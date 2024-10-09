@@ -55,23 +55,23 @@ const StyledLoader = styled.div`
             animation-delay: 0.2s;
         }   
         &:nth-child(2){
-            inset: 20%;
+            inset: 15%;
             z-index: 97;
             border-color: rgba(100,100,100,0.6);
             animation-delay: 0.4s;
         }
         &:nth-child(3){
-            inset: 10%;
+            inset: 0%;
             z-index: 96;
             border-color: rgba(100,100,100,0.4);
             animation-delay: 0.6s;
         }
-        &:nth-child(4){
-            inset: 0%;
-            z-index: 95;
-            border-color: rgba(100,100,100,0.2);
-            animation-delay: 0.8s;
-        }
+        // &:nth-child(4){
+        //     inset: 0%;
+        //     z-index: 95;
+        //     border-color: rgba(100,100,100,0.2);
+        //     animation-delay: 0.8s;
+        // }
     }
 `;
 
@@ -85,7 +85,7 @@ const Loader = () => {
             <div className="box" style={{display: "flex", justifyContent: "center", alignItems: "center"}}><Text color="black">Loading</Text></div>
             <div className="box"></div>
             <div className="box"></div>
-            <div className="box"></div>
+            {/* <div className="box"></div> */}
         </StyledLoader>
     )
 };
