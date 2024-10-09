@@ -72,7 +72,7 @@ const ProjectSet = (props) => {
       <Link variant="hover" color="primary" onClick={() => navigate("/projects")} style={{display: "flex", alignItems: "center", gap: "0.5rem"}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
         <Text color='black' size="large" style={{marginTop: "1rem"}}>Filters:</Text>
         <div style={{display: "flex", alignItems: "center", flexDirection: "row", flexWrap: "wrap", columnGap: "2rem", marginTop: "0.25rem"}} >
-          <Select placeholder='' size="small" color="black" variant="soft" label="FrontEnd" options={[{title: "React", value: "react"}, {title: "Typescript", value: "typescript"}, {title: "Javascript", value: "javascript"}]} menuProps={{style: {zIndex: 10000, backgroundColor: appearance === "light" ? "white" : "#202124" }}} onClick={_handleFrontEndFilter}/>
+          <Select placeholder='' size="small" color="black" variant="outlined" label="FrontEnd" options={[{title: "React", value: "react"}, {title: "Typescript", value: "typescript"}, {title: "Javascript", value: "javascript"}]} menuProps={{style: {zIndex: 10000, backgroundColor: appearance === "light" ? "white" : "#202124" }}} onClick={_handleFrontEndFilter}/>
           {/* <Select placeholder='' size="small" color="black" variant="outlined" label="BackEnd" options={[{title: "Node", value: "node"}, {title: "Express", value: "express"}]} menuProps={{style: {zIndex: 10000, backgroundColor: appearance === "light" ? "white" : "#202124" }}}/> */}
         </div>
         <div className={classes.projectSetCollection} style={{marginTop: "1rem"}}>
