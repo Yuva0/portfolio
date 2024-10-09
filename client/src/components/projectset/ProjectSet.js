@@ -5,7 +5,7 @@ import 'react-spinning-wheel/dist/style.css';
 import classes from './css/ProjectSet.module.css';
 import ProjectSetItem from './ProjectSetItem.js';
 import getAxiosRequest from '../../util/getAxiosRequest';
-import { Text, Link } from 'stelios';
+import { Text, Link, Select } from 'stelios';
 import { IconArrowRight } from '@tabler/icons-react';
 
 const ProjectSet = (props) => {
@@ -59,9 +59,13 @@ const ProjectSet = (props) => {
   return (
     <div>
       <Link variant="hover" color="primary" onClick={() => navigate("/projects")} style={{display: "flex", alignItems: "center", gap: "0.5rem"}}><Text size="large" color="primary">{props.title}</Text> <IconArrowRight/></Link>
-      <div className={classes.projectSetCollection} style={{marginTop: "1rem"}}>
-        {currentPageData}
-      </div>
+        <div style={{display: "flex", alignItems: "center", flexDirection: "row", flexWrap: "wrap", columnGap: "2rem", marginTop: "1rem"}}>
+          <Select placeholder='' size="small" color="black" variant="outlined" label="FrontEnd" options={[{title: "React", value: "react"}, {title: "Typescript", value: "typescript"}]}/>
+          <Select placeholder='' size="small" color="black" variant="outlined" label="BackEnd" options={[{title: "Node", value: "node"}, {title: "Express", value: "express"}]}/>
+        </div>
+        <div className={classes.projectSetCollection} style={{marginTop: "1rem"}}>
+          {currentPageData}
+        </div>
     </div>
   );
 };
