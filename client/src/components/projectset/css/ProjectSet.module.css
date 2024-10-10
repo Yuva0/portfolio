@@ -5,6 +5,13 @@
   .projectSetTitle{
       margin-bottom: 12px;
   }
+  
+  .loadingSetCollection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
     
   .projectSetCollection{
     display: flex;
