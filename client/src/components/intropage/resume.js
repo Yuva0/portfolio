@@ -30,7 +30,7 @@ const Resume = (props) => {
 
     const handleDownloadResume = () => {
         if (theme === "ats") {
-            window.open("https://drive.google.com/uc?export=download&id=1PONvnsGiqQ-kz2wRH4c9ANDAcfO4IPNx");
+            window.open("https://drive.google.com/uc?export=download&id=1-dxYpgjDfMGN-G_eQMWLNsKXqYi1jOPc");
         }
         else {
             window.open("https://drive.google.com/uc?export=download&id=1eNO7UYY3GoTw6PCwYZXm6Ze5OktcR76p");
