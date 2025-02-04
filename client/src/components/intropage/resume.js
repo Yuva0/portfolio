@@ -30,19 +30,19 @@ const Resume = (props) => {
 
     const handleDownloadResume = () => {
         if (theme === "ats") {
-            window.open("https://drive.google.com/uc?export=download&id=1-dxYpgjDfMGN-G_eQMWLNsKXqYi1jOPc");
+            window.open("https://drive.google.com/uc?export=download&id=1-tO3xR90P-xCJOj-zs7Lyic8r4NEbvlL");
         }
         else {
-            window.open("https://drive.google.com/uc?export=download&id=1eNO7UYY3GoTw6PCwYZXm6Ze5OktcR76p");
+            window.open("https://drive.google.com/uc?export=download&id=1b5I_Iba5sEXCLeUYDlzqQ25JEpcX6GQ7");
         }
     }
 
     const handleFullScreenResume = () => {
         if (theme === "ats") {
-            window.open("https://tanujsengupta.b-cdn.net/resume/resume_ats.pdf");
+            window.open("https://tanujsengupta.b-cdn.net/resume/ats_resume.pdf");
         }
         else {
-            window.open("https://tanujsengupta.b-cdn.net/resume/vscode_resume.pdf");
+            window.open("https://tanujsengupta.b-cdn.net/resume/resume_vscode.pdf");
         }
     }
 

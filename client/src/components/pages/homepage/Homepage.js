@@ -52,11 +52,11 @@ const Homepage = () => {
         <div className={classes.homepage} style={{backgroundColor: colorPalette.primary.appearance === "light" ? "white" : "#202124"}}>
             <Suspense fallback={<div style={{height: isMobile ? "400px" : "600px", width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}><Loader/></div>}>
                 <Intropage/>
-                <Motto/>
+                {/* <Motto/> */}
                 <ProjectSet title="Latest Projects" time="latest" limit="3"/>
-                {certificateset}
                 <Experience/>
                 <SkillSet title="High Rated Skills" time="latest" limit="6" />
+                {certificateset}
                 <Education/>
             </Suspense>
         </div>

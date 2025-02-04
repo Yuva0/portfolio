@@ -22,7 +22,7 @@ const SkillSetItem = (props) => {
         <Fragment>
             <Card color="primary" className={classes.skillSetItemWrapper} onClick={skillClickHandler} variant="neumorph" style={{padding: 0, borderRadius: "16px"}}>
                 <>
-                    <img src={props.image} alt={props.alt}/>
+                    <img src={props.image} alt={props.alt} style={{background: "white"}}/>
                     <Text style={{marginTop:"0.5rem", marginBottom: "0.5rem"}} size="small" preciseColor={_color} className={classes.skillDescription}>{props.name}</Text>
                     <div className={classes.starRating}><StarRating rating={props.rating}/></div>
                 </>

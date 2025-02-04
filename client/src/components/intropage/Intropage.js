@@ -58,10 +58,10 @@ const Intropage = () => {
                 </div>
             <div style={{ flex: "1 1 65%", padding: "1rem 0" }}>
 
-            <List color="primary" title={<Text color="primary" size="large">FrontEnd Developer</Text>} style={{gap: "0.25rem"}}>
-                <ListItem><Text preciseColor={_color} size="medium">Specialising in component design systems and accessibility.</Text></ListItem>
+            <List color="primary" title={<Text color="primary" size="large">Full Stack Developer</Text>} style={{gap: "0.25rem"}}>
+                <ListItem><Text preciseColor={_color} size="medium">Having five years of experience in building robust, scalable, and intuitive web applications</Text></ListItem>
                 <ListItem><Text preciseColor={_color} size="medium" style={{marginTop: "0.5rem"}}>Created multiple websites with focus on functionality, performance and user experience.</Text></ListItem>
-                <ListItem><Text preciseColor={_color} size="medium" style={{marginTop: "0.5rem"}}>Currently creating a themable design system with over 100 components - <Link variant="underline" target="_blank" color="primary" href="https://steliosui.com/">www.steliosui.com</Link></Text></ListItem>
+                <ListItem><Text preciseColor={_color} size="medium" style={{marginTop: "0.5rem", lineHeight: "1.5rem"}}>Worked on both front-end technologies like TypeScript and React, as well as back-end technologies such as NodeJS, SpringBoot and Express.js for building scalable and efficient applications.</Text></ListItem>
             </List>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2rem", columnGap: "2rem", rowGap: "1rem", flexWrap: "wrap"}}>
                 <Button variant="neumorph" color="primary" onClick={() => {setShowResume(true)}} style={{backgroundColor: _primaryBgColor, color: _primaryColor , border:0}}>View Resume</Button>
